@@ -93,7 +93,7 @@ h2{font-size:16px;font-weight:bold;color:#fff;line-height:40px;}
 .more::before,.more::after{position:absolute;content:'';clear:both;width:16px;height:2px;background-color:#000;}
 .more::before{top:4px;left:0px;}
 .more::after{top:4px;left:0px;transform:rotate(90deg);transition:0.3s;}
-.more.on::after{transform:rotate(0deg);}
+.more:hover::after{transform:rotate(-90deg);}
 .new_notice p::before{display:inline-block;content:'';width:30px;height:15px;margin-right:5px;background:url(../images/img_labelnew.png);vertical-align:text-bottom;}
 
 /* list */
