@@ -85,6 +85,7 @@ h2{font-size:16px;font-weight:bold;color:#fff;line-height:40px;}
 .system_wrap>div:last-child li::before{position:absolute;top:13px;left:0;display:inline-block;content:'';width:5px;height:5px;border-radius:3px;background-color:#9a9a9a;}
 .system_wrap>div:last-child p, .system_wrap>div:last-child span{font-size:14px;text-align:left;line-height:20px;color:#a6a6a6;}
 .system_wrap>div:last-child p{color:#333;}
+.system_wrap>div:last-child li:hover p{text-decoration:underline;}
 .system_wrap .tit{margin-bottom:10px;padding-bottom:12px;border-bottom:1px solid #c3c3c3;}
 .system_wrap h3{font-size:18px;color:#555;}
 .system_wrap .more{margin-top:5px;}
