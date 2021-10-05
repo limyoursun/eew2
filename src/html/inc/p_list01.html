@@ -1,0 +1,68 @@
+<div class="pop_overlay">
+  <div class="pop_wrap p_list01">
+    <div class="pop_tit">
+      <h1>신규생성</h1>
+      <button type="button" class="btn_pop_close" closePop></button>
+    </div>
+    <div class="pop_body">
+      <div class="pop_cont">
+        <table class="tbl_row tbl_create">
+          <caption>신규생성</caption>
+          <colgroup>
+            <col width="180">
+            <col width="*">
+            <col width="180">
+            <col width="*">
+          </colgroup>
+          <tr>
+            <th scope="row"><label for="code">발생시각</label></th>
+            <td colspan="3">
+              <input type="number">
+              <input type="number" class="input_40px">시
+              <input type="number" class="input_40px">분
+              <input type="number" class="input_40px">초
+            </td>
+          </tr>
+          <tr>
+            <th>
+              <label for="latitude">위도</label>
+            </th>
+            <td>
+              <input type="text" id="latitude"> ˚
+            </td>
+            <th>
+              <label for="longitude">경도</label>
+            </th>
+            <td>
+              <input type="text" id="longitude"> ˚
+            </td>
+          </tr>
+          <tr>
+            <th>
+              <label for="scale">규모(ML)</label>
+            </th>
+            <td>
+              <input type="text" id="scale">
+            </td>
+            <th>
+              <label for="depth">깊이</label>
+            </th>
+            <td>
+              <input type="text" id="depth"> ㎞
+            </td>
+          </tr>
+          <tr>
+            <th scope="row"><label for="address">발생위치</label></th>
+            <td colspan="3">
+              <input id="address" type="text" class="input_100">
+            </td>
+          </tr>
+        </table>
+        <div class="btn_wrap alignR">
+          <button type="button" class="btn_s btn_navy">저장</button>
+          <button type="button" class="btn_s btn_gray">닫기</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
