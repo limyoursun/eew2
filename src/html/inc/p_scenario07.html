@@ -1,0 +1,114 @@
+<div class="pop_overlay">
+  <div class="pop_wrap p_scenario07">
+    <div class="pop_tit">
+      <h1>신규생성</h1>
+      <button type="button" class="btn_pop_close" closePop></button>
+    </div>
+    <div class="pop_body">
+      <div class="pop_cont">
+
+        <div class="table_wrap">
+          <table id="jqGrid2" class="jq-grid"></table>
+        </div>
+        <table class="tbl_row tbl_create">
+          <caption>신규생성</caption>
+          <colgroup>
+            <col width="180">
+            <col width="*">
+            <col width="180">
+            <col width="*">
+          </colgroup>
+          <tr>
+            <th scope="row"><label for="code">분화시각</label></th>
+            <td colspan="3">
+              <input type="number">
+              <input type="number" class="input_40px">시
+              <input type="number" class="input_40px">분
+            </td>
+            <th><label for="number">화산번호</label></th>
+            <td><span id="number">282110</span></td>
+          </tr>
+          <tr>
+            <th>
+              <label for="latitude">위도</label>
+            </th>
+            <td>
+              <input type="text" id="latitude"> ˚
+            </td>
+            <th>
+              <label for="longitude">경도</label>
+            </th>
+            <td>
+              <input type="text" id="longitude"> ˚
+            </td>
+            <th>
+              <label for="altitude">고도</label>
+            </th>
+            <td>
+              <input type="text" id="altitude"> m
+            </td>
+          </tr>
+          <tr>
+            <th>
+              <label for="name">화산명</label>
+            </th>
+            <td colspan="3">
+              <input type="text" id="name" class="input_100" value="아소산(Asosan)">
+            </td>
+            <th>
+              <label for="depth">분연주높이</label>
+            </th>
+            <td>
+              <input type="text" id="depth"> feet
+            </td>
+          </tr>
+        </table>
+        <div class="btn_wrap alignR">
+          <button type="button" class="btn_s btn_navy">저장</button>
+          <button type="button" class="btn_s btn_gray">닫기</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  var mydata = [
+    { "t1": "51211", "t2": "엄청 긴 화산 이름", "t3": "엄청 엄청 엄청 긴 위치명", "t4": "100", "t5": "120", "t6": "2000", "t7": "20180131141814"},
+    { "t1": "51212", "t2": "엄청 긴 화산 이름", "t3": "엄청 엄청 엄청 긴 위치명", "t4": "100", "t5": "120", "t6": "2000", "t7": "20180131141814"},
+    { "t1": "51213", "t2": "화산 이름", "t3": "엄청 엄청 엄청 긴 위치명", "t4": "100", "t5": "120", "t6": "2000", "t7": "20180131141814"},
+    { "t1": "51214", "t2": "엄청 긴 화산 이름", "t3": "엄청 엄청 엄청 긴 위치명", "t4": "100", "t5": "120", "t6": "2000", "t7": "20180131141814"},
+    { "t1": "51215", "t2": "엄청 긴 화산 이름", "t3": "엄청 엄청 엄청 긴 위치명", "t4": "100", "t5": "120", "t6": "2000", "t7": "20180131141814"},
+    { "t1": "51216", "t2": "엄청 긴 화산 이름", "t3": "엄청 엄청 엄청 긴 위치명", "t4": "100", "t5": "120", "t6": "2000", "t7": "20180131141814"},
+    { "t1": "51217", "t2": "화산 이름", "t3": "엄청 엄청 엄청 긴 위치명", "t4": "100", "t5": "120", "t6": "2000", "t7": "20180131141814"},
+    { "t1": "51218", "t2": "엄청 긴 화산 이름", "t3": "엄청 엄청 엄청 긴 위치명", "t4": "100", "t5": "120", "t6": "2000", "t7": "20180131141814"},
+    { "t1": "51219", "t2": "엄청 긴 화산 이름", "t3": "엄청 엄청 엄청 긴 위치명", "t4": "100", "t5": "120", "t6": "2000", "t7": "20180131141814"},
+    { "t1": "51210", "t2": "엄청 긴 화산 이름", "t3": "엄청 엄청 엄청 긴 위치명", "t4": "100", "t5": "120", "t6": "2000", "t7": "20180131141814"},
+    { "t1": "51211", "t2": "엄청 긴 화산 이름", "t3": "엄청 엄청 엄청 긴 위치명", "t4": "100", "t5": "120", "t6": "2000", "t7": "20180131141814"},
+    { "t1": "51212", "t2": "엄청 긴 화산 이름", "t3": "엄청 엄청 엄청 긴 위치명", "t4": "100", "t5": "120", "t6": "2000", "t7": "20180131141814"},
+    { "t1": "51213", "t2": "엄청 긴 화산 이름", "t3": "엄청 엄청 엄청 긴 위치명", "t4": "100", "t5": "120", "t6": "2000", "t7": "20180131141814"},
+    { "t1": "51214", "t2": "엄청 긴 화산 이름", "t3": "엄청 엄청 엄청 긴 위치명", "t4": "100", "t5": "120", "t6": "2000", "t7": "20180131141814"},
+    { "t1": "51215", "t2": "엄청 긴 화산 이름", "t3": "엄청 엄청 엄청 긴 위치명", "t4": "100", "t5": "120", "t6": "2000", "t7": "20180131141814"},
+    { "t1": "51215", "t2": "엄청 긴 화산 이름", "t3": "엄청 엄청 엄청 긴 위치명", "t4": "100", "t5": "120", "t6": "2000", "t7": "20180131141814"},
+    { "t1": "51215", "t2": "엄청 긴 화산 이름", "t3": "엄청 엄청 엄청 긴 위치명", "t4": "100", "t5": "120", "t6": "2000", "t7": "20180131141814"}
+  ];
+
+  $("#jqGrid2").jqGrid({
+    data: mydata,
+    datatype: "local",
+    colModel: [
+      { label: '화산번호', name: 't1', width: 50},
+      { label: '화산명', name: 't2' , width: 100 },
+      { label: '위치', name: 't3', width: 100 },
+      { label: '위도(˚)', name: 't4' , width: 30},
+      { label: '경도(˚)', name: 't5' , width: 30},
+      { label: '고도(m)', name: 't6', width: 30 },
+      { label: '최종수정일', name: 't7', width: 60 }
+    ],
+    loadonce: true,
+    height: 150,
+    viewrecords: true,
+    autowidth: true,
+    rowTotal: -1
+  });
+</script>

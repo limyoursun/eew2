@@ -1,0 +1,170 @@
+@@include('inc/top.html')
+
+<body>
+  <div id="wrap">
+    @@include('inc/header.html')
+    <!-- Contents -->
+    <div id="section" class="scenario03 scenario06 inner_wrap">
+      <div class="contents">
+        <input id="tabChk" type="hidden" value="3">
+        <div class="sub_content" id="contentArea">
+          <!-- subTab -->
+          <div class="sub_tab">
+            <div>
+              <ul id="sHeader">
+                <li class="s_m_close">
+                  <a href="#"><img src="../images/sub_close.png" alt="탭메뉴닫기"></a>
+                </li>
+                <li class="sub_menu"><a href="#">시나리오상세</a></li>
+                <li class="sub_menu on"><a href="#">시나리오목록</a>
+                  <span>
+                    <a href="#" class="btnClose">
+                      <img src="../images/sub_menu_close.png">
+                    </a>
+                  </span>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!-- subTab_e -->
+          <!-- contents -->
+          <div class="sub_tab_box">
+            <div class="stit_bg">
+              <h2>시나리오 목록 추가</h2>
+            </div>
+            <div class="contents_wrap flex_wrap f_sb">
+              <div class="table_wrap">
+                <div class="tbl_tit flex_wrap f_sb">
+                  <h3 class="tit_h3">통합 지진 목록</h3>
+                </div>
+                <div class="search_wrap">
+                  <ul class="search">
+                    <li>
+                      <label for="eq_type" class="dot">발생시각</label>
+                      <select name="eq_type">
+                        <option value="지진종류">지진종류</option>
+                      </select>
+                    </li>
+                    <li>
+                      <label for="date" class="dot">발생시각</label>
+                      <span class="period period_multi">
+                        <input type="text" class="datepicker from" id="date" name="date" placeholder="YYYY-MM-DD"
+                          readonly dataformat="from" title="시작 날짜 선택" value="2021-01-01">
+                        <input type="text" class="datepicker to" name="date" placeholder="YYYY-MM-DD" readonly
+                          dataformat="to" title="종료  날짜 선택" value="2021-01-01">
+                      </span>
+                    </li>
+                    <li>
+                      <label for="scale" class="dot">규모</label>
+                      <span class="period period_multi scale">
+                        <input type="text" value="2.0">
+                        <input type="text" value="6.0">
+                      </span>
+                    </li>
+                    <li>
+                      <label for="searchword" class="dot">검색어</label>
+                      <input type="text" id="searchword" placeholder="발생위치 및 지진명 검색">
+                      <a href="#" class="btn_s btn_navy">검색</a>
+                      <a href="#" class="btn_s btn_blue">초기화</a>
+                    </li>
+                  </ul>
+                </div>
+                <table id="jqGrid" class="jq-grid"></table>
+              </div>
+              <div class="ico_arrow">
+                <i class="axi axi-ion-arrow-right-b"></i>
+              </div>
+              <div class="table_wrap">
+                <div class="tbl_tit flex_wrap f_sb">
+                  <h3 class="tit_h3">시나리오 지진해일 목록</h3>
+                </div>
+                <table id="jqGrid2" class="jq-grid"></table>
+              </div>
+            </div>
+          </div>
+          <!-- contents_e -->
+        </div>
+      </div>
+      <script>
+        var mydata = [
+          { "t1": "일반", "t2": "2020014090", "t3": "2020-10-09 04:38:41", "t4": "2.0", "t5":"5", "t6":"-", "t7":"경북 경주시 남남서쪽 13km 지역" },
+          { "t1": "일반", "t2": "2020014091", "t3": "2020-10-09 04:38:41", "t4": "2.0", "t5":"5", "t6":"-", "t7":"경북 경주시 남남서쪽 13km 지역" },
+          { "t1": "일반", "t2": "2020014092", "t3": "2020-10-09 04:38:41", "t4": "2.0", "t5":"5", "t6":"-", "t7":"경북 경주시 남남서쪽 13km 지역" },
+          { "t1": "일반", "t2": "2020014093", "t3": "2020-10-09 04:38:41", "t4": "2.0", "t5":"5", "t6":"-", "t7":"경북 경주시 남남서쪽 13km 지역" },
+          { "t1": "일반", "t2": "2020014093", "t3": "2020-10-09 04:38:41", "t4": "2.0", "t5":"5", "t6":"-", "t7":"경북 경주시 남남서쪽 13km 지역" },
+          { "t1": "일반", "t2": "2020014093", "t3": "2020-10-09 04:38:41", "t4": "2.0", "t5":"5", "t6":"-", "t7":"경북 경주시 남남서쪽 13km 지역" },
+          { "t1": "일반", "t2": "2020014093", "t3": "2020-10-09 04:38:41", "t4": "2.0", "t5":"5", "t6":"-", "t7":"경북 경주시 남남서쪽 13km 지역" },
+          { "t1": "일반", "t2": "2020014094", "t3": "2020-10-09 04:38:41", "t4": "2.0", "t5":"5", "t6":"-", "t7":"경북 경주시 남남서쪽 13km 지역" }
+        ];
+
+        $("#jqGrid").jqGrid({
+          data: mydata,
+          datatype: "local",
+          colModel: [
+            { label: '지진종류', name: 't1', width: 15 },
+            { label: '운영 통합지진ID', name: 't2', width: 25},
+            { label: '진원시', name: 't3', width: 25 },
+            { label: '규모', name: 't4', width: 10 },
+            { label: '깊이', name: 't5', width: 10 },
+            { label: '최대진도', name: 't6', width: 10 },
+            { label: '위치', name: 't7', width: 35 }
+          ],
+          multiselect: true,
+          loadonce: true,
+          width:900,
+          height: 532,
+          viewrecords: true,
+          rowTotal: -1
+        });
+
+        function autoCrate(cellValue) {
+          var html, txt = "";
+          switch (cellValue) {
+            case "manual":
+              html = "Y";
+              break;
+            case "automatic":
+              html = "N";
+              break;
+            default:
+              html = "";
+          }
+          return html;
+        }
+        function waveExistence(cellValue) {
+          var html, txt = "";
+          switch (cellValue) {
+            case "y":
+              html = "○";
+              break;
+            default:
+              html = "";
+          }
+          return html;
+        }
+
+        $("#jqGrid2").jqGrid({
+          data: mydata,
+          datatype: "local",
+          colModel: [
+            { label: '지진종류', name: 't1', width: 15 },
+            { label: '운영 통합지진ID', name: 't2', width: 25},
+            { label: '진원시', name: 't3', width: 25 },
+            { label: '규모', name: 't4', width: 10 },
+            { label: '깊이', name: 't5', width: 10 },
+            { label: '최대진도', name: 't6', width: 10 },
+            { label: '위치', name: 't7', width: 35 }
+          ],
+          loadonce: true,
+          width:900,
+          height: 655,
+          viewrecords: true,
+          rowTotal: -1
+        });
+      </script>
+    </div>
+    <!-- // Contents -->
+  </div>
+</body>
+
+</html>

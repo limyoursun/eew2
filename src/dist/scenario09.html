@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>국가지진종합상황실 훈련시스템</title>
+  <link rel="icon" href="../images/favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="../plugins/axicon/axicon.min.css" />
+  <link rel="stylesheet" href="../plugins/jquery-ui/themes/base/jquery-ui.min.css" />
+  <link rel="stylesheet" href="../plugins/jqueryui-timepicker-addon/dist/jquery-ui-timepicker-addon.min.css" />
+  <link rel="stylesheet" href="../plugins/jqGrid/css/ui.jqgrid.css" />
+  <link rel="stylesheet" href="../css/common.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="../plugins/jquery/dist/jquery.min.js"></script>
+  <script src="../plugins/jquery-ui/jquery-ui.min.js"></script>
+  <script src="../plugins/jquery-ui/ui/i18n/datepicker-ko.js"></script>
+  <script src="../plugins/jqGrid/js/jquery.jqGrid.min.js"></script>
+  <script src="../plugins/jqGrid/js/i18n/grid.locale-kr.js"></script>
+  <script src="../js/ui_common.js"></script>
+</head>
+
+<body>
+  <div id="wrap">
+    <!-- Header -->
+<div id="header">
+  <div class="gnb">
+    <div class="inner_wrap">
+      <h1 class="logo">
+        <a href="./main.html"><img src="../images/img_logo.png" alt="기상청 국가지진종합상황실 훈련시스템"></a>
+      </h1>
+      <ul class="gnb_list">
+        <li class="site_status">
+          현재 <span class="tMint">관리자시스템</span>에 접속중입니다.
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="nav">
+    <div>
+      <ul class="lnb_list">
+        <li class="on">
+          <a class="menu101" href="">시나리오 관리</a>
+          <ul class="sub_list">
+            <li><a href="#" class="subMenu10101">지진</a></li>
+            <li><a href="#" class="subMenu10102">지진해일</a></li>
+            <li><a href="#" class="subMenu10103">화산</a></li>
+          </ul>
+        </li>
+        <li class="on">
+          <a class="menu102" href="">훈련실시</a>
+          <ul class="sub_list">
+            <li><a href="#" class="subMenu10201">지진</a></li>
+            <li><a href="#" class="subMenu10201">지진해일</a></li>
+            <li><a href="#" class="subMenu10201">화산</a></li>
+          </ul>
+        </li>
+        <li class="on">
+          <a class="menu103" href="">훈련결과</a>
+          <ul class="sub_list">
+            <li><a href="#" class="subMenu10301">훈련별 결과</a></li>
+            <li><a href="#" class="subMenu10302">시나리오별 결과</a></li>
+            <li><a href="#" class="subMenu10201">훈련자별 통계</a></li>
+          </ul>
+        </li>
+      </ul>
+      <ul class="user_link">
+        <li class="user_name"><b>최고관리자</b></li>
+        <a href="#" class="btn_log">로그아웃</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+<!-- // Header -->
+    <!-- Contents -->
+    <div id="section" class="scenario03 scenario09 inner_wrap">
+      <div class="contents">
+        <input id="tabChk" type="hidden" value="3">
+        <div class="sub_content" id="contentArea">
+          <!-- subTab -->
+          <div class="sub_tab">
+            <div>
+              <ul id="sHeader">
+                <li class="s_m_close">
+                  <a href="#"><img src="../images/sub_close.png" alt="탭메뉴닫기"></a>
+                </li>
+                <li class="sub_menu"><a href="#">시나리오상세</a></li>
+                <li class="sub_menu on"><a href="#">시나리오목록</a>
+                  <span>
+                    <a href="#" class="btnClose">
+                      <img src="../images/sub_menu_close.png">
+                    </a>
+                  </span>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!-- subTab_e -->
+          <!-- contents -->
+          <div class="sub_tab_box">
+            <div class="stit_bg">
+              <h2>시나리오 목록 추가</h2>
+            </div>
+            <div class="contents_wrap flex_wrap f_sb">
+              <div class="table_wrap">
+                <div class="tbl_tit flex_wrap f_sb">
+                  <h3 class="tit_h3">화산 전문감시 목록</h3>
+                </div>
+                <div class="search_wrap">
+                  <ul class="search">
+                    <li>
+                      <label for="date" class="dot">발생시각</label>
+                      <span class="period period_multi">
+                        <input type="text" class="datepicker from" id="date" name="date" placeholder="YYYY-MM-DD"
+                          readonly dataformat="from" title="시작 날짜 선택" value="2021-01-01">
+                        <input type="text" class="datepicker to" name="date" placeholder="YYYY-MM-DD" readonly
+                          dataformat="to" title="종료  날짜 선택" value="2021-01-01">
+                      </span>
+                    </li>
+                    <li>
+                      <label for="searchword" class="dot">검색어</label>
+                      <input type="text" id="searchword" placeholder="화산번호, 화산명, 분화위치">
+                      <a href="#" class="btn_s btn_navy">검색</a>
+                      <a href="#" class="btn_s btn_blue">초기화</a>
+                    </li>
+                  </ul>
+                </div>
+                <table id="jqGrid" class="jq-grid"></table>
+              </div>
+              <div class="ico_arrow">
+                <i class="axi axi-ion-arrow-right-b"></i>
+              </div>
+              <div class="table_wrap">
+                <div class="tbl_tit flex_wrap f_sb">
+                  <h3 class="tit_h3">시나리오 화산 목록</h3>
+                </div>
+                <table id="jqGrid2" class="jq-grid"></table>
+              </div>
+            </div>
+          </div>
+          <!-- contents_e -->
+        </div>
+      </div>
+      <script>
+        var mydata = [
+          { "t1": "2020-10-09 04:38:41", "t2": "2020014090", "t3": "Dukono(두코노)", "t4": "6000", "t5":"2020/150"},
+          { "t1": "2020-10-09 04:38:41", "t2": "2020014091", "t3": "Dukono(두코노)", "t4": "6000", "t5":"2020/150"},
+          { "t1": "2020-10-09 04:38:41", "t2": "2020014092", "t3": "Dukono(두코노)", "t4": "6000", "t5":"2020/150"},
+          { "t1": "2020-10-09 04:38:41", "t2": "2020014093", "t3": "Dukono(두코노)", "t4": "6000", "t5":"2020/150"},
+          { "t1": "2020-10-09 04:38:41", "t2": "2020014093", "t3": "Dukono(두코노)", "t4": "6000", "t5":"2020/150"},
+          { "t1": "2020-10-09 04:38:41", "t2": "2020014093", "t3": "Dukono(두코노)", "t4": "6000", "t5":"2020/150"},
+          { "t1": "2020-10-09 04:38:41", "t2": "2020014093", "t3": "Dukono(두코노)", "t4": "6000", "t5":"2020/150"},
+          { "t1": "2020-10-09 04:38:41", "t2": "2020014093", "t3": "Dukono(두코노)", "t4": "6000", "t5":"2020/150"},
+          { "t1": "2020-10-09 04:38:41", "t2": "2020014093", "t3": "Dukono(두코노)", "t4": "6000", "t5":"2020/150"},
+          { "t1": "2020-10-09 04:38:41", "t2": "2020014093", "t3": "Dukono(두코노)", "t4": "6000", "t5":"2020/150"},
+          { "t1": "2020-10-09 04:38:41", "t2": "2020014093", "t3": "Dukono(두코노)", "t4": "6000", "t5":"2020/150"},
+          { "t1": "2020-10-09 04:38:41", "t2": "2020014093", "t3": "Dukono(두코노)", "t4": "6000", "t5":"2020/150"},
+          { "t1": "2020-10-09 04:38:41", "t2": "2020014093", "t3": "Dukono(두코노)", "t4": "6000", "t5":"2020/150"},
+          { "t1": "2020-10-09 04:38:41", "t2": "2020014093", "t3": "Dukono(두코노)", "t4": "6000", "t5":"2020/150"},
+          { "t1": "2020-10-09 04:38:41", "t2": "2020014093", "t3": "Dukono(두코노)", "t4": "6000", "t5":"2020/150"},
+          { "t1": "2020-10-09 04:38:41", "t2": "2020014093", "t3": "Dukono(두코노)", "t4": "6000", "t5":"2020/150"},
+          { "t1": "2020-10-09 04:38:41", "t2": "2020014093", "t3": "Dukono(두코노)", "t4": "6000", "t5":"2020/150"},
+          { "t1": "2020-10-09 04:38:41", "t2": "2020014093", "t3": "Dukono(두코노)", "t4": "6000", "t5":"2020/150"},
+          { "t1": "2020-10-09 04:38:41", "t2": "2020014093", "t3": "Dukono(두코노)", "t4": "6000", "t5":"2020/150"},
+          { "t1": "2020-10-09 04:38:41", "t2": "2020014093", "t3": "Dukono(두코노)", "t4": "6000", "t5":"2020/150"},
+          { "t1": "2020-10-09 04:38:41", "t2": "2020014093", "t3": "Dukono(두코노)", "t4": "6000", "t5":"2020/150"},
+          { "t1": "2020-10-09 04:38:41", "t2": "2020014093", "t3": "Dukono(두코노)", "t4": "6000", "t5":"2020/150"},
+          { "t1": "2020-10-09 04:38:41", "t2": "2020014094", "t3": "Dukono(두코노)", "t4": "6000", "t5":"2020/150"}
+        ];
+
+        $("#jqGrid").jqGrid({
+          data: mydata,
+          datatype: "local",
+          colModel: [
+            { label: '발표시각', name: 't1', width: 20 },
+            { label: '화산번호', name: 't2', width: 15},
+            { label: '화산명', name: 't3', width: 25 },
+            { label: '분연주높이(feet)', name: 't4', width: 15 },
+            { label: '주의보번호', name: 't5', width: 15 }
+          ],
+          multiselect: true,
+          loadonce: true,
+          width:900,
+          height: 570,
+          viewrecords: true,
+          rowTotal: -1
+        });
+        $("#jqGrid2").jqGrid({
+          data: mydata,
+          datatype: "local",
+          colModel: [
+            { label: '발표시각', name: 't1', width: 20 },
+            { label: '화산번호', name: 't2', width: 15},
+            { label: '화산명', name: 't3', width: 25 },
+            { label: '분연주높이(feet)', name: 't4', width: 15 },
+            { label: '주의보번호', name: 't5', width: 15 }
+          ],
+          loadonce: true,
+          width:900,
+          height: 655,
+          viewrecords: true,
+          rowTotal: -1
+        });
+      </script>
+    </div>
+    <!-- // Contents -->
+  </div>
+</body>
+
+</html>

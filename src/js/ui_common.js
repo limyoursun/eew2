@@ -38,35 +38,6 @@ $(function () {
   closePop.on('click', function () {
     $(this).parents('.pop_overlay').hide();
   })
-  
-  $('.con_list .more').on('click', function () {
-    $(this).toggleClass('on');
-    $(this).parent('p').nextAll('ul').slideToggle('fast');
-  })
-})
 
-function autoCrate(cellValue) {
-  var html, txt = "";
-  switch (cellValue) {
-    case "manual":
-      html = "Y";
-      break;
-    case "automatic":
-      html = "N";
-      break;
-    default:
-      html = "";
-  }
-  return html;
-}
-function waveExistence(cellValue) {
-  var html, txt = "";
-  switch (cellValue) {
-    case "y":
-      html = "○";
-      break;
-    default:
-      html = "";
-  }
-  return html;
-}
+
+})
