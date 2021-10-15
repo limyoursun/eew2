@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>국가지진종합상황실 훈련시스템</title>
+  <link rel="icon" href="../images/favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="../plugins/axicon/axicon.min.css" />
+  <link rel="stylesheet" href="../plugins/jquery-ui/themes/base/jquery-ui.min.css" />
+  <link rel="stylesheet" href="../plugins/jqueryui-timepicker-addon/dist/jquery-ui-timepicker-addon.min.css" />
+  <link rel="stylesheet" href="../plugins/jqGrid/css/ui.jqgrid.css" />
+  <link rel="stylesheet" href="../css/common.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="../plugins/jquery/dist/jquery.min.js"></script>
+  <script src="../plugins/jquery-ui/jquery-ui.min.js"></script>
+  <script src="../plugins/jquery-ui/ui/i18n/datepicker-ko.js"></script>
+  <script src="../plugins/jqGrid/js/jquery.jqGrid.min.js"></script>
+  <script src="../plugins/jqGrid/js/i18n/grid.locale-kr.js"></script>
+  <script src="../js/ui_common.js"></script>
+</head>
+
+<body>
+  <div id="wrap">
+    <!-- Header -->
+<div id="header">
+  <div class="gnb">
+    <div class="inner_wrap">
+      <h1 class="logo">
+        <a href="./main.html"><img src="../images/img_logo.png" alt="기상청 국가지진종합상황실 훈련시스템"></a>
+      </h1>
+      <ul class="gnb_list">
+        <li class="site_status">
+          현재 <span class="tMint">관리자시스템</span>에 접속중입니다.
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="nav">
+    <div>
+      <ul class="lnb_list">
+        <li class="on">
+          <a class="menu101" href="">시나리오 관리</a>
+          <ul class="sub_list">
+            <li><a href="#" class="subMenu10101">지진</a></li>
+            <li><a href="#" class="subMenu10102">지진해일</a></li>
+            <li><a href="#" class="subMenu10103">화산</a></li>
+          </ul>
+        </li>
+        <li class="on">
+          <a class="menu102" href="">훈련실시</a>
+          <ul class="sub_list">
+            <li><a href="#" class="subMenu10201">지진</a></li>
+            <li><a href="#" class="subMenu10201">지진해일</a></li>
+            <li><a href="#" class="subMenu10201">화산</a></li>
+          </ul>
+        </li>
+        <li class="on">
+          <a class="menu103" href="">훈련결과</a>
+          <ul class="sub_list">
+            <li><a href="#" class="subMenu10301">훈련별 결과</a></li>
+            <li><a href="#" class="subMenu10302">시나리오별 결과</a></li>
+            <li><a href="#" class="subMenu10201">훈련자별 통계</a></li>
+          </ul>
+        </li>
+      </ul>
+      <ul class="user_link">
+        <li class="user_name"><b>최고관리자</b></li>
+        <a href="#" class="btn_log">로그아웃</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+<!-- // Header -->
+    <!-- Contents -->
+    <div id="section" class="training inner_wrap">
+      <div class="contents">
+        <input id="tabChk" type="hidden" value="3">
+        <div class="sub_content" id="contentArea">
+          <!-- subTab -->
+          <div class="sub_tab">
+            <div>
+              <ul id="sHeader">
+                <li class="s_m_close">
+                  <a href="#"><img src="../images/sub_close.png" alt="탭메뉴닫기"></a>
+                </li>
+                <li class="sub_menu"><a href="#">시나리오상세</a></li>
+                <li class="sub_menu on"><a href="#">시나리오목록</a>
+                  <span>
+                    <a href="#" class="btnClose">
+                      <img src="../images/sub_menu_close.png">
+                    </a>
+                  </span>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!-- subTab_e -->
+          <!-- contents -->
+          <div class="sub_tab_box">
+            <div class="stit_bg">
+              <h2>훈련실시 (화산)</h2>
+            </div>
+            <div class="contents_wrap">
+              <table class="table_wrap tbl_row">
+                <caption>훈련 옵션</caption>
+                <colgroup>
+                  <col width="180">
+                  <col width="250">
+                  <col width="*">
+                </colgroup>
+                <tr>
+                  <th><label for="datetime">발생일시</label></th>
+                  <td colspan="2"><span id="datetime">2021-06-23 13시 32분 20초</span></td>
+                </tr>
+                <tr>
+                  <th><label for="">목적</label></th>
+                  <td><span>신규 통보사 훈련</span></td>
+                  <td class="sequence_training">
+                    <input type="checkbox" id="training3" name="training">
+                    <label for="training3">무작위 훈련</label>
+                  </td>
+                </tr>
+                <script>
+                    $(function () {
+                      $("#training3").click(function () {
+                        var chk = $(this).is(':checked');
+                        if (chk) {
+                          $("#training1, #training2").attr('disabled', true);
+                          $(".table_wrap").addClass('on');
+                        }
+                        else {
+                          $("#training1, #training2").attr('disabled', false);
+                          $(".table_wrap").removeClass('on');
+                        }
+                      });
+                    });
+                  </script>
+                <tr>
+                  <th><label for="attendee">참석자</label></th>
+                  <td colspan="2">
+                    <select name="attendee" class="input_100px">
+                      <option value="선택">선택</option>
+                      <option value="팀장">팀장</option>
+                    </select>
+                    <select name="attendee" class="input_100px">
+                      <option value="선택">선택</option>
+                      <option value="홍길동">홍길동</option>
+                    </select>
+                    <a href="#" class="btn_m btn_blue">추가</a>
+                    <ul class="attendee_wrap">
+                      <li>
+                        <span>분석</span>
+                        <span>뽀로로</span>
+                      </li>
+                      <li>
+                        <span>분석</span>
+                        <span>뿡뿡이</span>
+                      </li>
+                      <li>
+                        <span>분석</span>
+                        <span>뚝딱이</span>
+                      </li>
+                    </ul>
+                  </td>
+                </tr>
+              </table>
+              <div class="table_wrap">
+                <div class="tbl_tit flex_wrap f_sb">
+                  <h3 class="tit_h3">지진</h3>
+                </div>
+                <table id="jqGrid" class="jq-grid"></table>
+              </div>
+              <div class="alignC">
+                <a href="#" class="btn_l btn_blue">훈련시작</a>
+              </div>
+            </div>
+          </div>
+          <!-- contents_e -->
+        </div>
+      </div>
+      <script>
+        var mydata = [
+          { "t1": "2020014090", "t2": "자연", "t3": "2021000712", "t4": "2020-10-09 04:38:41", "t5": "3.0", "t6": "10", "t7": "II", "t8": "경북 경주시 남남서쪽 13km 지역", "t9": "y", "t10": "manual", "t11": "5" },
+          { "t1": "2020014090", "t2": "미소", "t3": "2021000712", "t4": "2020-10-09 04:38:41", "t5": "7.5", "t6": "15", "t7": "VI", "t8": "경북 경주시 남남서쪽 13km 지역", "t9": "", "t10": "manual", "t11": "4" },
+          { "t1": "2020014090", "t2": "발파", "t3": "2021000712", "t4": "2020-10-09 04:38:41", "t5": "2.0", "t6": "1", "t7": "-", "t8": "경북 경주시 남남서쪽 13km 지역", "t9": "y", "t10": "automatic", "t11": "7" },
+          { "t1": "2020014090", "t2": "함몰", "t3": "2021000712", "t4": "2020-10-09 04:38:41", "t5": "3.5", "t6": "0", "t7": "III", "t8": "경북 경주시 남남서쪽 13km 지역", "t9": "y", "t10": "manual", "t11": "10" },
+          { "t1": "2020014090", "t2": "자연", "t3": "2021000712", "t4": "2020-10-09 04:38:41", "t5": "6.0", "t6": "5", "t7": "-", "t8": "경북 경주시 남남서쪽 13km 지역", "t9": "", "t10": "automatic", "t11": "2" },
+          { "t1": "2020014090", "t2": "미소", "t3": "2021000712", "t4": "2020-10-09 04:38:41", "t5": "8.0", "t6": "10", "t7": "-", "t8": "경북 경주시 남남서쪽 13km 지역", "t9": "y", "t10": "manual", "t11": "4" },
+          { "t1": "2020014090", "t2": "발파", "t3": "2021000712", "t4": "2020-10-09 04:38:41", "t5": "3.0", "t6": "15", "t7": "II", "t8": "경북 경주시 남남서쪽 13km 지역", "t9": "", "t10": "automatic", "t11": "3" },
+          { "t1": "2020014090", "t2": "함몰", "t3": "2021000712", "t4": "2020-10-09 04:38:41", "t5": "7.5", "t6": "1", "t7": "VI", "t8": "경북 경주시 남남서쪽 13km 지역", "t9": "y", "t10": "manual", "t11": "5" },
+          { "t1": "2020014090", "t2": "자연", "t3": "2021000712", "t4": "2020-10-09 04:38:41", "t5": "2.0", "t6": "0", "t7": "-", "t8": "경북 경주시 남남서쪽 13km 지역", "t9": "y", "t10": "manual", "t11": "7" },
+          { "t1": "2020014090", "t2": "미소", "t3": "2021000712", "t4": "2020-10-09 04:38:41", "t5": "3.5", "t6": "5", "t7": "III", "t8": "경북 경주시 남남서쪽 13km 지역", "t9": "", "t10": "automatic", "t11": "9" },
+          { "t1": "2020014090", "t2": "미소", "t3": "2021000712", "t4": "2020-10-09 04:38:41", "t5": "8.0", "t6": "10", "t7": "II", "t8": "경북 경주시 남남서쪽 13km 지역", "t9": "y", "t10": "automatic", "t11": "5" },
+          { "t1": "2020014090", "t2": "발파", "t3": "2021000712", "t4": "2020-10-09 04:38:41", "t5": "3.0", "t6": "15", "t7": "VI", "t8": "경북 경주시 남남서쪽 13km 지역", "t9": "", "t10": "manual", "t11": "4" },
+          { "t1": "2020014090", "t2": "함몰", "t3": "2021000712", "t4": "2020-10-09 04:38:41", "t5": "7.5", "t6": "1", "t7": "-", "t8": "경북 경주시 남남서쪽 13km 지역", "t9": "y", "t10": "manual", "t11": "7" },
+          { "t1": "2020014090", "t2": "자연", "t3": "2021000712", "t4": "2020-10-09 04:38:41", "t5": "2.0", "t6": "0", "t7": "III", "t8": "경북 경주시 남남서쪽 13km 지역", "t9": "y", "t10": "automatic", "t11": "10" },
+          { "t1": "2020014090", "t2": "미소", "t3": "2021000712", "t4": "2020-10-09 04:38:41", "t5": "3.5", "t6": "5", "t7": "-", "t8": "경북 경주시 남남서쪽 13km 지역", "t9": "", "t10": "manual", "t11": "2" },
+          { "t1": "2020014090", "t2": "미소", "t3": "2021000712", "t4": "2020-10-09 04:38:41", "t5": "3.5", "t6": "5", "t7": "-", "t8": "경북 경주시 남남서쪽 13km 지역", "t9": "", "t10": "manual", "t11": "2" },
+          { "t1": "2020014090", "t2": "미소", "t3": "2021000712", "t4": "2020-10-09 04:38:41", "t5": "3.5", "t6": "5", "t7": "-", "t8": "경북 경주시 남남서쪽 13km 지역", "t9": "", "t10": "manual", "t11": "2" }
+        ];
+
+        $("#jqGrid").jqGrid({
+          data: mydata,
+          datatype: "local",
+          colModel: [
+            { label: '시나리오 ID', name: 't1' },
+            { label: '지진종류', name: 't2', width: 95 },
+            { label: '운영통합지진 ID', name: 't3' },
+            { label: '진원시', name: 't4' },
+            { label: '규모', name: 't5', width: 60 },
+            { label: '깊이', name: 't6', width: 60 },
+            { label: '최대진도', name: 't7', width: 60 },
+            { label: '위치', name: 't8', width: 725, align: 'left', classes: "grid_col" },
+            { label: '파형유무', name: 't9', width: 70, formatter: waveExistence },
+            { label: '수동생성', name: 't10', width: 70, formatter: autoCrate },
+            { label: '훈련횟수', name: 't11', width: 70 }
+          ],
+          loadonce: true,
+          height: 380,
+          viewrecords: true,
+          autowidth: true,
+          rowTotal: -1
+        });
+
+        function autoCrate(cellValue) {
+          var html, txt = "";
+          switch (cellValue) {
+            case "manual":
+              html = "Y";
+              break;
+            case "automatic":
+              html = "N";
+              break;
+            default:
+              html = "";
+          }
+          return html;
+        }
+        function waveExistence(cellValue) {
+          var html, txt = "";
+          switch (cellValue) {
+            case "y":
+              html = "○";
+              break;
+            default:
+              html = "";
+          }
+          return html;
+        }
+      </script>
+    </div>
+    <!-- // Contents -->
+  </div>
+</body>
+
+</html>

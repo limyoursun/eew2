@@ -4,7 +4,7 @@
   <div id="wrap">
     @@include('inc/header.html')
     <!-- Contents -->
-    <div id="section" class="scenario01 inner_wrap">
+    <div id="section" class="training inner_wrap">
       <div class="contents">
         <input id="tabChk" type="hidden" value="3">
         <div class="sub_content" id="contentArea">
@@ -30,45 +30,84 @@
           <!-- contents -->
           <div class="sub_tab_box">
             <div class="stit_bg">
-              <h2>시나리오 목록</h2>
+              <h2>훈련실시 (지진)</h2>
             </div>
             <div class="contents_wrap">
-              <div class="search_wrap">
-                <ul class="search">
-                  <li>
-                    <label for="date" class="dot">발생시각</label>
-                    <span class="period period_multi">
-                      <input type="text" class="datepicker from" id="date" name="date" placeholder="YYYY-MM-DD" readonly
-                        dataformat="from" title="시작 날짜 선택" value="2021-01-01">
-                      <input type="text" class="datepicker to" name="date" placeholder="YYYY-MM-DD" readonly
-                        dataformat="to" title="종료  날짜 선택" value="2021-01-01">
-                    </span>
-                  </li>
-                  <li>
-                    <label for="scale" class="dot">규모</label>
-                    <span class="period period_multi scale">
-                      <input type="text" value="2.0">
-                      <input type="text" value="6.0">
-                    </span>
-                  </li>
-                  <li>
-                    <label for="searchword" class="dot">검색어</label>
-                    <input type="text" id="searchword" placeholder="발생위치 및 지진명 검색">
-                    <a href="#" class="btn_s btn_navy">검색</a>
-                    <a href="#" class="btn_s btn_blue">초기화</a>
-                  </li>
-                </ul>
-              </div>
+              <table class="table_wrap tbl_row">
+                <caption>훈련 옵션</caption>
+                <colgroup>
+                  <col width="180">
+                  <col width="250">
+                  <col width="*">
+                </colgroup>
+                <tr>
+                  <th><label for="datetime">발생일시</label></th>
+                  <td colspan="2"><span id="datetime">2021-06-23 13시 32분 20초</span></td>
+                </tr>
+                <tr>
+                  <th><label for="">목적</label></th>
+                  <td><span>신규 통보사 훈련</span></td>
+                  <td class="sequence_training">
+                    <input type="radio" id="training1" name="training">
+                    <label for="training1">분석부터 훈련</label>
+                    <input type="radio" id="training2" name="training">
+                    <label for="training2">통보부터 훈련</label>
+                    <input type="checkbox" id="training3" name="training">
+                    <label for="training3">무작위 훈련</label>
+                  </td>
+                  <script>
+                    $(function () {
+                      $("#training3").click(function () {
+                        var chk = $(this).is(':checked');
+                        if (chk) {
+                          $("#training1, #training2").attr('disabled', true);
+                          $(".table_wrap").addClass('on');
+                        }
+                        else {
+                          $("#training1, #training2").attr('disabled', false);
+                          $(".table_wrap").removeClass('on');
+                        }
+                      });
+                    });
+                  </script>
+                </tr>
+                <tr>
+                  <th><label for="attendee">참석자</label></th>
+                  <td colspan="2">
+                    <select name="attendee" class="input_100px">
+                      <option value="선택">선택</option>
+                      <option value="팀장">팀장</option>
+                    </select>
+                    <select name="attendee" class="input_100px">
+                      <option value="선택">선택</option>
+                      <option value="홍길동">홍길동</option>
+                    </select>
+                    <a href="#" class="btn_m btn_blue">추가</a>
+                    <ul class="attendee_wrap">
+                      <li>
+                        <span>분석</span>
+                        <span>뽀로로</span>
+                      </li>
+                      <li>
+                        <span>분석</span>
+                        <span>뿡뿡이</span>
+                      </li>
+                      <li>
+                        <span>분석</span>
+                        <span>뚝딱이</span>
+                      </li>
+                    </ul>
+                  </td>
+                </tr>
+              </table>
               <div class="table_wrap">
                 <div class="tbl_tit flex_wrap f_sb">
                   <h3 class="tit_h3">지진</h3>
-                  <div class="btn_wrap">
-                    <a href="#" class="btn_m btn_mint">목록추가</a>
-                    <a href="#" class="btn_m btn_mint">신규생성</a>
-                    <a href="#" class="btn_m btn_deepgray">삭제</a>
-                  </div>
                 </div>
                 <table id="jqGrid" class="jq-grid"></table>
+              </div>
+              <div class="alignC">
+                <a href="#" class="btn_l btn_blue">훈련시작</a>
               </div>
             </div>
           </div>
@@ -113,10 +152,9 @@
             { label: '수동생성', name: 't11', width: 70, formatter: autoCrate },
             { label: '훈련횟수', name: 't12', width: 70 }
           ],
-          multiselect: true,
           //rownumbers:true,
           loadonce: true,
-          height: 565,
+          height: 380,
           viewrecords: true,
           autowidth: true,
           rowTotal: -1
@@ -151,7 +189,6 @@
     </div>
     <!-- // Contents -->
   </div>
-  @@include('inc/p_scenario01.html')
 </body>
 
 </html>

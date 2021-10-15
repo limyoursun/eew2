@@ -132,7 +132,7 @@
                 <div class="tbl_tit flex_wrap f_sb">
                   <h3 class="tit_h3">지진</h3>
                   <div class="btn_wrap">
-                    <a href="#" class="btn_m  btn_mint">목록추가</a>
+                    <a href="#" class="btn_m btn_mint">목록추가</a>
                     <a href="#" class="btn_m btn_mint">신규생성</a>
                     <a href="#" class="btn_m btn_deepgray">삭제</a>
                   </div>
@@ -237,9 +237,9 @@
             <col width="*">
           </colgroup>
           <tr>
-            <th scope="row"><label for="code">발생시각</label></th>
+            <th scope="row"><label for="time">발생시각</label></th>
             <td colspan="3">
-              <input type="number">
+              <input type="text" id="time" class="datepicker nobtnimg" name="date" placeholder="YYYY-MM-DD" readonly dataformat="datepic" required title="발생일자 선택">
               <input type="number" class="input_40px">시
               <input type="number" class="input_40px">분
               <input type="number" class="input_40px">초
@@ -282,7 +282,7 @@
         </table>
         <div class="btn_wrap alignR">
           <button type="button" class="btn_s btn_navy">저장</button>
-          <button type="button" class="btn_s btn_gray">닫기</button>
+          <button type="button" class="btn_s btn_deepgray">닫기</button>
         </div>
       </div>
     </div>

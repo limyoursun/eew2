@@ -72,7 +72,7 @@ h2{font-size:16px;font-weight:bold;color:#fff;line-height:40px;}
 .contents_wrap{padding:16px;overflow:hidden;}
 .tit_h3::before{position:relative;top:3px;display:inline-block;content:'';width:15px;height:22px;margin-right:2px;background:url(../images/ico_h3.png) no-repeat;}
 .tit_h3{margin-bottom:12px;font-size:20px;font-weight:bold;color:#555;line-height:22px;}
-.ico_arrow{position:relative;left:-8px;display:flex;align-items:center;font-size:45px;color:#6a7789;}
+.ico_arrow{position:relative;left:-8px;display:flex;align-items:center;font-size:38px;color:#6a7789;}
 
 /* main */
 .training_wrap{margin:140px 0 47px;}
@@ -116,8 +116,8 @@ h2{font-size:16px;font-weight:bold;color:#fff;line-height:40px;}
 table input,
 table select{width:100%;}
 table textarea{width:100%;resize:none;height:100px;}
-.scenario02 .tbl_row th{width:13%;}
-.scenario02 .tbl_row td{width:11%;}
+.scenario02 .tbl_row th{width:12%;}
+.scenario02 .tbl_row td{width:13%;}
 .cancel_wrap.active,.edit_wrap{display:block;}
 .cancel_wrap,.edit_wrap.active{display:none;}
 .scenario03 .table_wrap{width:900px;margin-right:20px;margin-bottom:0;}
@@ -128,6 +128,23 @@ table textarea{width:100%;resize:none;height:100px;}
 .scenario08 .tbl_row th{width:10%;}
 .scenario08 .tbl_row td{width:10%;}
 .scenario09 .search li{margin-bottom:0;}
+
+/* training */
+.training .sequence_training input[type=radio],
+.training .sequence_training input[type=checkbox]{display:inline-block;width:20px;}
+.training .sequence_training label{display:inline-block;width:100px;vertical-align:middle;}
+.attendee_wrap li{display:inline-block;background-color:#ddd;margin-top:4px; padding-right:10px;border-radius:3px;}
+.attendee_wrap li::after{content:'\f1b4';font-family:'axicon';vertical-align:middle;cursor:pointer;margin-left:5px;}
+.attendee_wrap li span:first-child::after{content:':';margin-left:5px;}
+.training .table_wrap.on .ui-jqgrid{position:relative;}
+.training .table_wrap .ui-jqgrid::before{position:absolute;top:0;left:0;display:block;content:'';width:100%;height:100%;background:none;z-index:-1;transition:0.2s;}
+.training .table_wrap.on .ui-jqgrid::before{background:rgba(0, 0, 0, .4);z-index:9980;}
+.training .tbl_row th{width:10%;}
+
+/*result*/
+.result .tbl_row th{width:8%;}
+.result .tbl_row td{width:12%;}
+.result .training_result_wrap .table_wrap{margin-bottom:10px;}
 
 /* pop */
 .pop_wrap .tbl_row th{width:15%;}
