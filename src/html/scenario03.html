@@ -65,11 +65,104 @@
                       <label for="searchword" class="dot">검색어</label>
                       <input type="text" id="searchword" placeholder="발생위치 및 지진명 검색">
                       <a href="#" class="btn_s btn_navy">검색</a>
-                      <a href="#" class="btn_s btn_blue">초기화</a>
                     </li>
                   </ul>
                 </div>
-                <table id="jqGrid" class="jq-grid"></table>
+                <div class="tbl_default">
+                  <table class="tbl_col">
+                    <caption>통합 지진 목록 제목 테이블</caption>
+                    <colgroup>
+                      <col width="40">
+                      <col width="100">
+                      <col width="120">
+                      <col width="150">
+                      <col width="70">
+                      <col width="70">
+                      <col width="70">
+                      <col width="*">
+                      <col class="fix_scroll">
+                    </colgroup>
+                    <tr>
+                      <th></th>
+                      <th>지진종류</th>
+                      <th>운영통합지진ID</th>
+                      <th>진원시</th>
+                      <th>규모</th>
+                      <th>깊이</th>
+                      <th>최대진도</th>
+                      <th>위치</th>
+                      <th>&nbsp;</th>
+                    </tr>
+                    </thead>
+                  </table>
+                  <div class="tbl_scroll" style="height:534px">
+                    <table class="tbl_col">
+                      <caption>통합 지진 목록 내용 테이블</caption>
+                      <colgroup>
+                        <col width="40">
+                        <col width="100">
+                        <col width="120">
+                        <col width="150">
+                        <col width="70">
+                        <col width="70">
+                        <col width="70">
+                        <col width="*">
+                      </colgroup>
+                      <tbody>
+                        <tr class="on">
+                          <td><input type="checkbox" checked></td>
+                          <td>일반</td>
+                          <td>2020014090</td>
+                          <td>2020-10-09 04:38:41</td>
+                          <td>3.0</td>
+                          <td>15</td>
+                          <td>II</td>
+                          <td>경북 경주시 남남서쪽 13km 지역</td>
+                        </tr>
+                        <tr>
+                          <td><input type="checkbox"></td>
+                          <td>일반</td>
+                          <td>2020014090</td>
+                          <td>2020-10-09 04:38:41</td>
+                          <td>3.0</td>
+                          <td>15</td>
+                          <td>II</td>
+                          <td>경북 경주시 남남서쪽 13km 지역</td>
+                        </tr>
+                        <tr>
+                          <td><input type="checkbox"></td>
+                          <td>일반</td>
+                          <td>2020014090</td>
+                          <td>2020-10-09 04:38:41</td>
+                          <td>3.0</td>
+                          <td>15</td>
+                          <td>II</td>
+                          <td>경북 경주시 남남서쪽 13km 지역</td>
+                        </tr>
+                        <tr>
+                          <td><input type="checkbox"></td>
+                          <td>일반</td>
+                          <td>2020014090</td>
+                          <td>2020-10-09 04:38:41</td>
+                          <td>3.0</td>
+                          <td>15</td>
+                          <td>II</td>
+                          <td>경북 경주시 남남서쪽 13km 지역</td>
+                        </tr>
+                        <tr>
+                          <td><input type="checkbox"></td>
+                          <td>일반</td>
+                          <td>2020014090</td>
+                          <td>2020-10-09 04:38:41</td>
+                          <td>3.0</td>
+                          <td>15</td>
+                          <td>II</td>
+                          <td>경북 경주시 남남서쪽 13km 지역</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
               </div>
               <div class="ico_arrow">
                 <i class="axi axi-keyboard-arrow-right"></i>
@@ -78,90 +171,99 @@
                 <div class="tbl_tit flex_wrap f_sb">
                   <h3 class="tit_h3">시나리오 지진 목록</h3>
                 </div>
-                <table id="jqGrid2" class="jq-grid"></table>
+                <div class="tbl_default">
+                  <table class="tbl_col">
+                    <caption>시나리오 지진 목록 제목 테이블</caption>
+                    <colgroup>
+                      <col width="100">
+                      <col width="120">
+                      <col width="150">
+                      <col width="70">
+                      <col width="70">
+                      <col width="70">
+                      <col width="*">
+                      <col class="fix_scroll">
+                    </colgroup>
+                    <tr>
+                      <th>지진종류</th>
+                      <th>운영통합지진ID</th>
+                      <th>진원시</th>
+                      <th>규모</th>
+                      <th>깊이</th>
+                      <th>최대진도</th>
+                      <th>위치</th>
+                      <th>&nbsp;</th>
+                    </tr>
+                    </thead>
+                  </table>
+                  <div class="tbl_scroll" style="height:652px">
+                    <table class="tbl_col">
+                      <caption>시나리오 지진 목록 내용 테이블</caption>
+                      <colgroup>
+                        <col width="100">
+                        <col width="120">
+                        <col width="150">
+                        <col width="70">
+                        <col width="70">
+                        <col width="70">
+                        <col width="*">
+                      </colgroup>
+                      <tbody>
+                        <tr>
+                          <td>일반</td>
+                          <td>2020014090</td>
+                          <td>2020-10-09 04:38:41</td>
+                          <td>3.0</td>
+                          <td>15</td>
+                          <td>II</td>
+                          <td>경북 경주시 남남서쪽 13km 지역</td>
+                        </tr>
+                        <tr>
+                          <td>일반</td>
+                          <td>2020014090</td>
+                          <td>2020-10-09 04:38:41</td>
+                          <td>3.0</td>
+                          <td>15</td>
+                          <td>II</td>
+                          <td>경북 경주시 남남서쪽 13km 지역</td>
+                        </tr>
+                        <tr>
+                          <td>일반</td>
+                          <td>2020014090</td>
+                          <td>2020-10-09 04:38:41</td>
+                          <td>3.0</td>
+                          <td>15</td>
+                          <td>II</td>
+                          <td>경북 경주시 남남서쪽 13km 지역</td>
+                        </tr>
+                        <tr>
+                          <td>일반</td>
+                          <td>2020014090</td>
+                          <td>2020-10-09 04:38:41</td>
+                          <td>3.0</td>
+                          <td>15</td>
+                          <td>II</td>
+                          <td>경북 경주시 남남서쪽 13km 지역</td>
+                        </tr>
+                        <tr>
+                          <td>일반</td>
+                          <td>2020014090</td>
+                          <td>2020-10-09 04:38:41</td>
+                          <td>3.0</td>
+                          <td>15</td>
+                          <td>II</td>
+                          <td>경북 경주시 남남서쪽 13km 지역</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
           <!-- contents_e -->
         </div>
       </div>
-      <script>
-        var mydata = [
-          { "t1": "일반", "t2": "2020014090", "t3": "2020-10-09 04:38:41", "t4": "2.0", "t5":"5", "t6":"-", "t7":"경북 경주시 남남서쪽 13km 지역" },
-          { "t1": "일반", "t2": "2020014091", "t3": "2020-10-09 04:38:41", "t4": "2.0", "t5":"5", "t6":"-", "t7":"경북 경주시 남남서쪽 13km 지역" },
-          { "t1": "일반", "t2": "2020014092", "t3": "2020-10-09 04:38:41", "t4": "2.0", "t5":"5", "t6":"-", "t7":"경북 경주시 남남서쪽 13km 지역" },
-          { "t1": "일반", "t2": "2020014093", "t3": "2020-10-09 04:38:41", "t4": "2.0", "t5":"5", "t6":"-", "t7":"경북 경주시 남남서쪽 13km 지역" },
-          { "t1": "일반", "t2": "2020014093", "t3": "2020-10-09 04:38:41", "t4": "2.0", "t5":"5", "t6":"-", "t7":"경북 경주시 남남서쪽 13km 지역" },
-          { "t1": "일반", "t2": "2020014093", "t3": "2020-10-09 04:38:41", "t4": "2.0", "t5":"5", "t6":"-", "t7":"경북 경주시 남남서쪽 13km 지역" },
-          { "t1": "일반", "t2": "2020014093", "t3": "2020-10-09 04:38:41", "t4": "2.0", "t5":"5", "t6":"-", "t7":"경북 경주시 남남서쪽 13km 지역" },
-          { "t1": "일반", "t2": "2020014094", "t3": "2020-10-09 04:38:41", "t4": "2.0", "t5":"5", "t6":"-", "t7":"경북 경주시 남남서쪽 13km 지역" }
-        ];
-
-        $("#jqGrid").jqGrid({
-          data: mydata,
-          datatype: "local",
-          colModel: [
-            { label: '지진종류', name: 't1', width: 15 },
-            { label: '운영 통합지진ID', name: 't2', width: 25},
-            { label: '진원시', name: 't3', width: 25 },
-            { label: '규모', name: 't4', width: 10 },
-            { label: '깊이', name: 't5', width: 10 },
-            { label: '최대진도', name: 't6', width: 10 },
-            { label: '위치', name: 't7', width: 35 }
-          ],
-          multiselect: true,
-          loadonce: true,
-          width:900,
-          height: 532,
-          viewrecords: true,
-          rowTotal: -1
-        });
-
-        function autoCrate(cellValue) {
-          var html, txt = "";
-          switch (cellValue) {
-            case "manual":
-              html = "Y";
-              break;
-            case "automatic":
-              html = "N";
-              break;
-            default:
-              html = "";
-          }
-          return html;
-        }
-        function waveExistence(cellValue) {
-          var html, txt = "";
-          switch (cellValue) {
-            case "y":
-              html = "○";
-              break;
-            default:
-              html = "";
-          }
-          return html;
-        }
-
-        $("#jqGrid2").jqGrid({
-          data: mydata,
-          datatype: "local",
-          colModel: [
-            { label: '지진종류', name: 't1', width: 15 },
-            { label: '운영 통합지진ID', name: 't2', width: 25},
-            { label: '진원시', name: 't3', width: 25 },
-            { label: '규모', name: 't4', width: 10 },
-            { label: '깊이', name: 't5', width: 10 },
-            { label: '최대진도', name: 't6', width: 10 },
-            { label: '위치', name: 't7', width: 35 }
-          ],
-          loadonce: true,
-          width:900,
-          height: 655,
-          viewrecords: true,
-          rowTotal: -1
-        });
-      </script>
     </div>
     <!-- // Contents -->
   </div>

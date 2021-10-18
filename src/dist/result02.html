@@ -1,8 +1,78 @@
-@@include('inc/top.html')
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>국가지진종합상황실 훈련시스템</title>
+  <link rel="icon" href="../images/favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="../plugins/axicon/axicon.min.css" />
+  <link rel="stylesheet" href="../plugins/jquery-ui/themes/base/jquery-ui.min.css" />
+  <link rel="stylesheet" href="../plugins/jqueryui-timepicker-addon/dist/jquery-ui-timepicker-addon.min.css" />
+  <link rel="stylesheet" href="../plugins/jqGrid/css/ui.jqgrid.css" />
+  <link rel="stylesheet" href="../css/common.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="../plugins/jquery/dist/jquery.min.js"></script>
+  <script src="../plugins/jquery-ui/jquery-ui.min.js"></script>
+  <script src="../plugins/jquery-ui/ui/i18n/datepicker-ko.js"></script>
+  <script src="../plugins/jqGrid/js/jquery.jqGrid.min.js"></script>
+  <script src="../plugins/jqGrid/js/i18n/grid.locale-kr.js"></script>
+  <script src="../plugins/echarts/dist/echarts.min.js"></script>
+  <script src="../js/ui_common.js"></script>
+</head>
 
 <body>
   <div id="wrap">
-    @@include('inc/header.html')
+    <!-- Header -->
+<div id="header">
+  <div class="gnb">
+    <div class="inner_wrap">
+      <h1 class="logo">
+        <a href="./main.html"><img src="../images/img_logo.png" alt="기상청 국가지진종합상황실 훈련시스템"></a>
+      </h1>
+      <ul class="gnb_list">
+        <li class="site_status">
+          현재 <span class="tMint">관리자시스템</span>에 접속중입니다.
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="nav">
+    <div>
+      <ul class="lnb_list">
+        <li class="on">
+          <a class="menu101" href="">시나리오 관리</a>
+          <ul class="sub_list">
+            <li><a href="#" class="subMenu10101">지진</a></li>
+            <li><a href="#" class="subMenu10102">지진해일</a></li>
+            <li><a href="#" class="subMenu10103">화산</a></li>
+          </ul>
+        </li>
+        <li class="on">
+          <a class="menu102" href="">훈련실시</a>
+          <ul class="sub_list">
+            <li><a href="#" class="subMenu10201">지진</a></li>
+            <li><a href="#" class="subMenu10201">지진해일</a></li>
+            <li><a href="#" class="subMenu10201">화산</a></li>
+          </ul>
+        </li>
+        <li class="on">
+          <a class="menu103" href="">훈련결과</a>
+          <ul class="sub_list">
+            <li><a href="#" class="subMenu10301">훈련별 결과</a></li>
+            <li><a href="#" class="subMenu10302">시나리오별 결과</a></li>
+            <li><a href="#" class="subMenu10201">훈련자별 통계</a></li>
+          </ul>
+        </li>
+      </ul>
+      <ul class="user_link">
+        <li class="user_name"><b>최고관리자</b></li>
+        <a href="#" class="btn_log">로그아웃</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+<!-- // Header -->
     <!-- Contents -->
     <div id="section" class="result inner_wrap">
       <div class="contents">
@@ -30,7 +100,7 @@
           <!-- contents -->
           <div class="sub_tab_box">
             <div class="stit_bg">
-              <h2>훈련결과 상세 (지진)</h2>
+              <h2>훈련결과 상세 (지진해일)</h2>
             </div>
             <div class="contents_wrap">
               <div class="search_wrap">
@@ -118,7 +188,7 @@
                         <col width="280">
                       </colgroup>
                       <tbody>
-                        <tr class="on">
+                        <tr>
                           <td>T000000010</td>
                           <td>지진</td>
                           <td>분석</td>
@@ -132,7 +202,7 @@
                           <td>5</td>
                           <td>팀장:홍길동 / 분석:김길동 / 통보:오길동</td>
                         </tr>
-                        <tr>
+                        <tr class="on">
                           <td>T000000010</td>
                           <td>지진</td>
                           <td>분석</td>

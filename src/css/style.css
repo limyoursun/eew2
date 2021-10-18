@@ -12,6 +12,13 @@
 .btn_pop_close::before{content:'';display:block;width:100%;height:100%;background:url(../images/btn_pop_close.png);}
 .tbl_create input{width:100px;}
 
+/* pop */
+.pop_wrap .tbl_row th{width:15%;}
+.p_scenario01 .input_40px{margin:0 2px 0 7px;}
+.p_scenario02_1{width:350px;}
+.p_scenario02_1 p{margin:20px 0 30px;font-size:15px;}
+.p_scenario07{width:1000px;}
+
 /* login */
 .login_wrap{position:relative;width:100%;height:100%;background-color:#e9ecee;}
 .login_wrap::before{position:absolute;display:block;content:'';width:100%;height:470px;background:url(../images/bg_longin.png) 0 0 no-repeat;background-size:cover;box-shadow:0 0 20px 0 rgba(0, 0, 0, .7);}
@@ -136,19 +143,17 @@ table textarea{width:100%;resize:none;height:100px;}
 .attendee_wrap li{display:inline-block;background-color:#ddd;margin-top:4px; padding-right:10px;border-radius:3px;}
 .attendee_wrap li::after{content:'\f1b4';font-family:'axicon';vertical-align:middle;cursor:pointer;margin-left:5px;}
 .attendee_wrap li span:first-child::after{content:':';margin-left:5px;}
-.training .table_wrap.on .ui-jqgrid{position:relative;}
-.training .table_wrap .ui-jqgrid::before{position:absolute;top:0;left:0;display:block;content:'';width:100%;height:100%;background:none;z-index:-1;transition:0.2s;}
-.training .table_wrap.on .ui-jqgrid::before{background:rgba(0, 0, 0, .4);z-index:9980;}
+.training .tbl_default{position:relative;}
+.training .tbl_default::before{position:absolute;top:0;left:0;display:block;content:'';width:100%;height:100%;background:rgba(0, 0, 0, 0);z-index:-1;transition:0.2s;}
+.training .tbl_default.on::before{background:rgba(0, 0, 0, .4);z-index:9980;transition:0.2s;}
 .training .tbl_row th{width:10%;}
 
 /*result*/
 .result .tbl_row th{width:8%;}
 .result .tbl_row td{width:12%;}
-.result .training_result_wrap .table_wrap{margin-bottom:10px;}
-
-/* pop */
-.pop_wrap .tbl_row th{width:15%;}
-.p_scenario01 .input_40px{margin:0 2px 0 7px;}
-.p_scenario02_1{width:350px;}
-.p_scenario02_1 p{margin:20px 0 30px;font-size:15px;}
-.p_scenario07{width:1000px;}
+.result .training_result_wrap .table_wrap{margin-bottom:9px;}
+.result .trainee_wrap>.table_wrap:first-child{width:950px;}
+.result .trainee_wrap>.table_wrap:last-child{width:calc(100% - 980px);}
+.result .trainee_wrap .ico_arrow{left:2px;}
+.result #container{height:240px;}
+.tbl_chart .tbl_col{margin-top:15px;}

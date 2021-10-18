@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>국가지진종합상황실 훈련시스템</title>
+  <link rel="icon" href="../images/favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="../plugins/axicon/axicon.min.css" />
+  <link rel="stylesheet" href="../plugins/jquery-ui/themes/base/jquery-ui.min.css" />
+  <link rel="stylesheet" href="../plugins/jqueryui-timepicker-addon/dist/jquery-ui-timepicker-addon.min.css" />
+  <link rel="stylesheet" href="../plugins/jqGrid/css/ui.jqgrid.css" />
+  <link rel="stylesheet" href="../css/common.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="../plugins/jquery/dist/jquery.min.js"></script>
+  <script src="../plugins/jquery-ui/jquery-ui.min.js"></script>
+  <script src="../plugins/jquery-ui/ui/i18n/datepicker-ko.js"></script>
+  <script src="../plugins/jqGrid/js/jquery.jqGrid.min.js"></script>
+  <script src="../plugins/jqGrid/js/i18n/grid.locale-kr.js"></script>
+  <script src="../plugins/echarts/dist/echarts.min.js"></script>
+  <script src="../js/ui_common.js"></script>
+</head>
+
+<body>
+  <div id="wrap">
+    <!-- Header -->
+<div id="header">
+  <div class="gnb">
+    <div class="inner_wrap">
+      <h1 class="logo">
+        <a href="./main.html"><img src="../images/img_logo.png" alt="기상청 국가지진종합상황실 훈련시스템"></a>
+      </h1>
+      <ul class="gnb_list">
+        <li class="site_status">
+          현재 <span class="tMint">관리자시스템</span>에 접속중입니다.
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="nav">
+    <div>
+      <ul class="lnb_list">
+        <li class="on">
+          <a class="menu101" href="">시나리오 관리</a>
+          <ul class="sub_list">
+            <li><a href="#" class="subMenu10101">지진</a></li>
+            <li><a href="#" class="subMenu10102">지진해일</a></li>
+            <li><a href="#" class="subMenu10103">화산</a></li>
+          </ul>
+        </li>
+        <li class="on">
+          <a class="menu102" href="">훈련실시</a>
+          <ul class="sub_list">
+            <li><a href="#" class="subMenu10201">지진</a></li>
+            <li><a href="#" class="subMenu10201">지진해일</a></li>
+            <li><a href="#" class="subMenu10201">화산</a></li>
+          </ul>
+        </li>
+        <li class="on">
+          <a class="menu103" href="">훈련결과</a>
+          <ul class="sub_list">
+            <li><a href="#" class="subMenu10301">훈련별 결과</a></li>
+            <li><a href="#" class="subMenu10302">시나리오별 결과</a></li>
+            <li><a href="#" class="subMenu10201">훈련자별 통계</a></li>
+          </ul>
+        </li>
+      </ul>
+      <ul class="user_link">
+        <li class="user_name"><b>최고관리자</b></li>
+        <a href="#" class="btn_log">로그아웃</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+<!-- // Header -->
+    <!-- Contents -->
+    <div id="section" class="result inner_wrap">
+      <div class="contents">
+        <input id="tabChk" type="hidden" value="3">
+        <div class="sub_content" id="contentArea">
+          <!-- subTab -->
+          <div class="sub_tab">
+            <div>
+              <ul id="sHeader">
+                <li class="s_m_close">
+                  <a href="#"><img src="../images/sub_close.png" alt="탭메뉴닫기"></a>
+                </li>
+                <li class="sub_menu"><a href="#">시나리오상세</a></li>
+                <li class="sub_menu on"><a href="#">시나리오목록</a>
+                  <span>
+                    <a href="#" class="btnClose">
+                      <img src="../images/sub_menu_close.png">
+                    </a>
+                  </span>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!-- subTab_e -->
+          <!-- contents -->
+          <div class="sub_tab_box">
+            <div class="stit_bg">
+              <h2>훈련자별 통계</h2>
+            </div>
+            <div class="contents_wrap">
+              <div class="trainee_wrap flex_wrap f_sb">
+                <div class="table_wrap">
+                  <div class="tbl_tit flex_wrap f_sb">
+                    <h3 class="tit_h3">훈련 참석자별 통계</h3>
+                  </div>
+                  <div class="search_wrap">
+                    <ul class="search">
+                      <li>
+                        <label for="date" class="dot">훈련일자</label>
+                        <span class="period period_multi">
+                          <input type="text" class="datepicker from" id="date" name="date" placeholder="YYYY-MM-DD"
+                            readonly dataformat="from" title="시작 날짜 선택" value="2021-01-01">
+                          <input type="text" class="datepicker to" name="date" placeholder="YYYY-MM-DD" readonly
+                            dataformat="to" title="종료  날짜 선택" value="2021-01-01">
+                        </span>
+                      </li>
+                      <li>
+                        <label for="searchword" class="dot">검색어</label>
+                        <select name="eq_type">
+                          <option value="지진">지진</option>
+                        </select>
+                        <input type="text" id="searchword" placeholder="훈련자명">
+                        <a href="#" class="btn_s btn_navy">검색</a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="btn_wrap alignR">
+                    <a href="#" class="btn_m btn_mint" style="margin-bottom:7px;">다운로드</a>
+                  </div>
+                  <div class="tbl_default">
+                    <table class="tbl_col">
+                      <caption>훈련 참석자별 훈련 통계 제목 테이블</caption>
+                      <colgroup>
+                        <col width="*">
+                        <col width="200">
+                        <col width="200">
+                        <col width="200">
+                        <col width="200">
+                        <col class="fix_scroll">
+                      </colgroup>
+                      <tr>
+                        <th>참석자</th>
+                        <th>팀장(분)</th>
+                        <th>분석(분)</th>
+                        <th>통보(분)</th>
+                        <th>훈련횟수</th>
+                        <th>&nbsp;</th>
+                      </tr>
+                      </thead>
+                    </table>
+                    <div class="tbl_scroll" style="height:220px">
+                      <table class="tbl_col">
+                        <caption>훈련 참석자별 훈련 통계 내용 테이블</caption>
+                        <colgroup>
+                          <col width="*">
+                          <col width="200">
+                          <col width="200">
+                          <col width="200">
+                          <col width="200">
+                        </colgroup>
+                        <tbody>
+                          <tr class="on">
+                            <td>홍길동</td>
+                            <td>400</td>
+                            <td>300</td>
+                            <td>200</td>
+                            <td>70</td>
+                          </tr>
+                          <tr>
+                            <td>홍길동</td>
+                            <td>400</td>
+                            <td>300</td>
+                            <td>200</td>
+                            <td>70</td>
+                          </tr>
+                          <tr>
+                            <td>홍길동</td>
+                            <td>400</td>
+                            <td>300</td>
+                            <td>200</td>
+                            <td>70</td>
+                          </tr>
+                          <tr>
+                            <td>홍길동</td>
+                            <td>400</td>
+                            <td>300</td>
+                            <td>200</td>
+                            <td>70</td>
+                          </tr>
+                          <tr>
+                            <td>홍길동</td>
+                            <td>400</td>
+                            <td>300</td>
+                            <td>200</td>
+                            <td>70</td>
+                          </tr>
+                          <tr>
+                            <td>홍길동</td>
+                            <td>400</td>
+                            <td>300</td>
+                            <td>200</td>
+                            <td>70</td>
+                          </tr>
+                          <tr>
+                            <td>홍길동</td>
+                            <td>400</td>
+                            <td>300</td>
+                            <td>200</td>
+                            <td>70</td>
+                          </tr>
+                          <tr>
+                            <td>홍길동</td>
+                            <td>400</td>
+                            <td>300</td>
+                            <td>200</td>
+                            <td>70</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+                <div class="ico_arrow">
+                  <i class="axi axi-keyboard-arrow-right"></i>
+                </div>
+                <div class="tbl_chart table_wrap">
+                  <div class="tbl_tit flex_wrap f_sb">
+                    <h3 class="tit_h3">훈련자 역할별 훈련 통계</h3>
+                    <div class="btn_wrap">
+                      <a href="#" class="btn_m btn_mint">다운로드</a>
+                    </div>
+                  </div>
+                  <table class="tbl_col">
+                    <caption>훈련자 역할별 훈련 통계</caption>
+                    <colgroup>
+                      <col width="110">
+                      <col width="90">
+                      <col width="90">
+                      <col width="90">
+                      <col width="90">
+                      <col width="90">
+                      <col width="90">
+                      <col width="*">
+                    </colgroup>
+                    <tr>
+                      <td>홍길동</td>
+                      <th>2021.1</th>
+                      <th>2021.2</th>
+                      <th>2021.3</th>
+                      <th>2021.4</th>
+                      <th>2021.5</th>
+                      <th>2021.6</th>
+                      <th>총계</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th>팀장</th>
+                        <td>100</td>
+                        <td>50</td>
+                        <td>60</td>
+                        <td>100</td>
+                        <td>70</td>
+                        <td>20</td>
+                        <td>400</td>
+                      </tr>
+                      <tr>
+                        <th>분석</th>
+                        <td>80</td>
+                        <td>50</td>
+                        <td>60</td>
+                        <td>20</td>
+                        <td>40</td>
+                        <td>50</td>
+                        <td>300</td>
+                      </tr>
+                      <tr>
+                        <th>통보</th>
+                        <td>50</td>
+                        <td>25</td>
+                        <td>30</td>
+                        <td>45</td>
+                        <td>15</td>
+                        <td>35</td>
+                        <td>200</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <div id="container"></div>
+                </div>
+              </div>
+              <div class="table_wrap">
+                <div class="tbl_tit flex_wrap f_sb">
+                  <h3 class="tit_h3">훈련목록</h3>
+                  <div class="btn_wrap">
+                    <a href="#" class="btn_m btn_mint">다운로드</a>
+                  </div>
+                </div>
+                div class="tbl_default">
+                <table class="tbl_col">
+                  <caption>훈련결과 제목 테이블</caption>
+                  <colgroup>
+                    <col width="100">
+                    <col width="80">
+                    <col width="100">
+                    <col width="100">
+                    <col width="150">
+                    <col width="150">
+                    <col width="70">
+                    <col width="*">
+                    <col width="150">
+                    <col width="150">
+                    <col width="130">
+                    <col width="280">
+                    <col class="fix_scroll">
+                  </colgroup>
+                  <tr>
+                    <th><label for="">훈련ID</label>
+                    <th><label for="">구분</label>
+                    <th><label for="">훈련구분</label>
+                    <th><label for="">시나리오ID</label>
+                    <th><label for="">지진번호/화산번호</label>
+                    <th><label for="">진원시/분화시각</label>
+                    <th><label for="">규모</label>
+                    <th><label for="">발생위치</label>
+                    <th><label for="">훈련시작시각</label>
+                    <th><label for="">훈련완료시각</label>
+                    <th><label for="">총 훈련시간(분)</label>
+                    <th><label for="">훈련 참석자</label>
+                    <th>&nbsp;</th>
+                  </tr>
+                  </thead>
+                </table>
+                <div class="tbl_scroll" style="height:202px">
+                  <table class="tbl_col">
+                    <caption>훈련결과 내용 테이블</caption>
+                    <colgroup>
+                      <col width="100">
+                      <col width="80">
+                      <col width="100">
+                      <col width="100">
+                      <col width="150">
+                      <col width="150">
+                      <col width="70">
+                      <col width="*">
+                      <col width="150">
+                      <col width="150">
+                      <col width="130">
+                      <col width="280">
+                    </colgroup>
+                    <tbody>
+                      <tr>
+                        <td>T000000010</td>
+                        <td>지진</td>
+                        <td>분석</td>
+                        <td>S0000000009</td>
+                        <td>2020014090</td>
+                        <td>2020-10-09 04:38:41</td>
+                        <td>3.0</td>
+                        <td>경북 경주시 남남서쪽 13km 지역</td>
+                        <td>2020-10-09 04:38:41</td>
+                        <td>2020-10-09 04:38:41</td>
+                        <td>5</td>
+                        <td>팀장:홍길동 / 분석:김길동 / 통보:오길동</td>
+                      </tr>
+                      <tr>
+                        <td>T000000010</td>
+                        <td>지진</td>
+                        <td>분석</td>
+                        <td>S0000000009</td>
+                        <td>2020014090</td>
+                        <td>2020-10-09 04:38:41</td>
+                        <td>3.0</td>
+                        <td>경북 경주시 남남서쪽 13km 지역</td>
+                        <td>2020-10-09 04:38:41</td>
+                        <td>2020-10-09 04:38:41</td>
+                        <td>5</td>
+                        <td>팀장:홍길동 / 분석:김길동 / 통보:오길동</td>
+                      </tr>
+                      <tr>
+                        <td>T000000010</td>
+                        <td>지진</td>
+                        <td>분석</td>
+                        <td>S0000000009</td>
+                        <td>2020014090</td>
+                        <td>2020-10-09 04:38:41</td>
+                        <td>3.0</td>
+                        <td>경북 경주시 남남서쪽 13km 지역</td>
+                        <td>2020-10-09 04:38:41</td>
+                        <td>2020-10-09 04:38:41</td>
+                        <td>5</td>
+                        <td>팀장:홍길동 / 분석:김길동 / 통보:오길동</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- contents_e -->
+      </div>
+    </div>
+    <script>
+      var dom = document.getElementById("container");
+      var myChart = echarts.init(dom);
+      var app = {};
+      var option;
+      option = {
+        legend: {
+          bottom: 'bottom'
+        },
+        tooltip: {},
+        dataset: {
+          source: [
+            ['product', '팀장', '분석', '통보'],
+            ['2021.1', 100, 80, 50],
+            ['2021.2', 50, 50, 25],
+            ['2021.3', 60, 60, 30],
+            ['2021.4', 100, 20, 45],
+            ['2021.5', 70, 40, 15],
+            ['2021.6', 20, 50, 35]
+          ]
+        },
+        xAxis: { type: 'category' },
+        yAxis: {},
+        // Declare several bar series, each will be mapped
+        // to a column of dataset.source by default.
+        series: [{ type: 'bar' }, { type: 'bar' }, { type: 'bar' }]
+      };
+
+      if (option && typeof option === 'object') {
+        myChart.setOption(option);
+      }
+    </script>
+  </div>
+  <!-- // Contents -->
+  </div>
+</body>
+
+</html>
