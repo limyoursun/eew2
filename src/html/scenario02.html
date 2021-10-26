@@ -4,7 +4,7 @@
   <div id="wrap">
     @@include('inc/header.html')
     <!-- Contents -->
-    <div id="section" class="scenario02 inner_wrap">
+    <div id="section" class="inner_wrap">
       <div class="contents">
         <input id="tabChk" type="hidden" value="3">
         <div class="sub_content" id="contentArea">
@@ -29,185 +29,155 @@
           <!-- subTab_e -->
           <!-- contents -->
           <div class="sub_tab_box">
-            <div class="stit_bg">
-              <h2>시나리오 상세</h2>
-            </div>
-            <div class="contents_wrap">
-              <div class="table_wrap">
-                <div class="tbl_tit flex_wrap f_sb">
-                  <h3 class="tit_h3">시나리오 ID 정보</h3>
-                  <div class="flex_wrap">
-                    <div class="btn_wrap cancel_wrap">
-                      <a href="#" class="btn_m btn_blue">목록</a>
-                      <a href="#" class="btn_m btn_mint">저장</a>
-                      <a href="#" class="btn_cancel btn_m btn_deepgray">취소</a>
-                    </div>
-                    <div class="btn_wrap edit_wrap">
-                      <a href="#" class="btn_m btn_blue">목록</a>
-                      <a href="#" class="btn_edit btn_m btn_mint">수정</a>
-                    </div>
-                  </div>
-                  <script>
-                    $(function () {
-                      $('.btn_edit').on('click', function () {
-                        var parents = $(this).parents('.table_wrap');
-                        parents.find('.edit_input').attr("disabled", false);
-                        parents.find('.edit_wrap').toggleClass('active');
-                        parents.find('.cancel_wrap').toggleClass('active');
-                      })
-                      $('.btn_cancel').on('click', function () {
-                        var parents = $(this).parents('.table_wrap');
-                        parents.find('.edit_input').attr("disabled", true);
-                        parents.find('.edit_wrap').toggleClass('active');
-                        parents.find('.cancel_wrap').toggleClass('active');
-                      })
-                    })
-                  </script>
-                </div>
-                <table class="tbl_row">
-                  <tr>
-                    <th><label for="scenario_id">시나리오 ID</label></th>
-                    <td><span>000000001</span></td>
-                    <th><label for="scenario_type">시나리오 종류</label></th>
-                    <td><span>지진</span></td>
-                    <th><label for="integration_id">운영 통합지진 ID</label></th>
-                    <td><span>2021000622</span></td>
-                    <th><label for="scenario_id">메인 시나리오 ID</label></th>
-                    <td><span>-</span></td>
-                  </tr>
-                  <tr>
-                    <th><label for="create">수동생성</label></th>
-                    <td><span>Y</span></td>
-                    <th><label for="registrant">등록자</label></th>
-                    <td><span>박민아</span></td>
-                    <th><label for="date">생성일</label></th>
-                    <td><span>2021-06-21</span></td>
-                    <th><label for="training">훈련횟수</label></th>
-                    <td><span>25</span></td>
-                  </tr>
-                  <tr>
-                    <th><label for="eq_type">지진종류</label></th>
-                    <td><span>일반</span></td>
-                    <th><label for="datetime">발생일시</label></th>
-                    <td><span id="datetime">2021-06-17 11:37:30</span></td>
-                    <th><label for="scale">규모</label></th>
-                    <td><input type="number" id="scale" class="edit_input" value="2.1" disabled></td>
-                    <th><label for="deep">깊이(㎞)</label></th>
-                    <td><input type="number" id="deep" class="edit_input" value="10" disabled></td>
-                  </tr>
-                  <tr>
-                    <th><label for="location">발생위치</label></th>
-                    <td colspan="3"><span id="location">충남 대안군 북서쪽 39㎞ 해역</span></td>
-                    <th><label for="latitude">위도</label></th>
-                    <td><span>36.71</span></td>
-                    <th><label for="longitude">경도</label></th>
-                    <td><span>128.71</span></td>
-                  </tr>
-                </table>
+            <div class="scenario02">
+              <div class="stit_bg">
+                <h2>시나리오 상세</h2>
               </div>
-              <div class="table_wrap">
-                <div class="tbl_tit flex_wrap f_sb">
-                  <h3 class="tit_h3">시나리오 의견</h3>
-                  <div>
-                    <a href="#" class="btn_m btn_mint">글쓰기</a>
+              <div class="contents_wrap">
+                <div class="table_wrap">
+                  <div class="tbl_tit flex_wrap f_sb">
+                    <h3 class="tit_h3">시나리오 ID 정보</h3>
+                    <div class="flex_wrap">
+                      <div class="btn_wrap cancel_wrap">
+                        <a href="#" class="btn_m btn_blue">목록</a>
+                        <a href="#" class="btn_m btn_mint">저장</a>
+                        <a href="#" class="btn_cancel btn_m btn_deepgray">취소</a>
+                      </div>
+                      <div class="btn_wrap edit_wrap">
+                        <a href="#" class="btn_m btn_blue">목록</a>
+                        <a href="#" class="btn_edit btn_m btn_mint">수정</a>
+                      </div>
+                    </div>
+                    <script>
+                      $(function () {
+                        $('.btn_edit').on('click', function () {
+                          var parents = $(this).parents('.table_wrap');
+                          parents.find('.edit_input').attr("disabled", false);
+                          parents.find('.edit_wrap').toggleClass('active');
+                          parents.find('.cancel_wrap').toggleClass('active');
+                        })
+                        $('.btn_cancel').on('click', function () {
+                          var parents = $(this).parents('.table_wrap');
+                          parents.find('.edit_input').attr("disabled", true);
+                          parents.find('.edit_wrap').toggleClass('active');
+                          parents.find('.cancel_wrap').toggleClass('active');
+                        })
+                      })
+                    </script>
                   </div>
-                </div>
-                <div class="tbl_default">
-                  <table class="tbl_col">
-                    <caption>시나리오 의견 제목 테이블</caption>
-                    <colgroup>
-                      <col width="120">
-                      <col width="*">
-                      <col width="150">
-                      <col width="150">
-                      <col class="fix_scroll">
-                    </colgroup>
+                  <table class="tbl_row">
                     <tr>
-                      <th>순번</th>
-                      <th>제목</th>
-                      <th>작성자</th>
-                      <th>작성일</th>
-                      <th>&nbsp;</th>
+                      <th><label for="scenario_id">시나리오 ID</label></th>
+                      <td><span>000000001</span></td>
+                      <th><label for="scenario_type">시나리오 종류</label></th>
+                      <td><span>지진</span></td>
+                      <th><label for="integration_id">운영 통합지진 ID</label></th>
+                      <td><span>2021000622</span></td>
+                      <th><label for="scenario_id">메인 시나리오 ID</label></th>
+                      <td><span>-</span></td>
                     </tr>
-                    </thead>
+                    <tr>
+                      <th><label for="create">수동생성</label></th>
+                      <td><span>Y</span></td>
+                      <th><label for="registrant">등록자</label></th>
+                      <td><span>박민아</span></td>
+                      <th><label for="date">생성일</label></th>
+                      <td><span>2021-06-21</span></td>
+                      <th><label for="training">훈련횟수</label></th>
+                      <td><span>25</span></td>
+                    </tr>
+                    <tr>
+                      <th><label for="eq_type">지진종류</label></th>
+                      <td><span>일반</span></td>
+                      <th><label for="datetime">발생일시</label></th>
+                      <td><span id="datetime">2021-06-17 11:37:30</span></td>
+                      <th><label for="scale">규모</label></th>
+                      <td><input type="number" id="scale" class="edit_input" value="2.1" disabled></td>
+                      <th><label for="deep">깊이(㎞)</label></th>
+                      <td><input type="number" id="deep" class="edit_input" value="10" disabled></td>
+                    </tr>
+                    <tr>
+                      <th><label for="location">발생위치</label></th>
+                      <td colspan="3"><span id="location">충남 대안군 북서쪽 39㎞ 해역</span></td>
+                      <th><label for="latitude">위도</label></th>
+                      <td><span>36.71</span></td>
+                      <th><label for="longitude">경도</label></th>
+                      <td><span>128.71</span></td>
+                    </tr>
                   </table>
-                  <div class="tbl_scroll" style="height:102px">
+                </div>
+                <div class="table_wrap">
+                  <div class="tbl_tit flex_wrap f_sb">
+                    <h3 class="tit_h3">시나리오 의견</h3>
+                    <div>
+                      <a href="#" class="btn_m btn_mint">글쓰기</a>
+                    </div>
+                  </div>
+                  <div class="tbl_default">
                     <table class="tbl_col">
-                      <caption>시나리오 의견 내용 테이블</caption>
+                      <caption>시나리오 의견 제목 테이블</caption>
                       <colgroup>
                         <col width="120">
                         <col width="*">
                         <col width="150">
                         <col width="150">
+                        <col class="fix_scroll">
                       </colgroup>
-                      <tbody>
-                        <tr>
-                          <td>1</td>
-                          <td>시나리오 의견</td>
-                          <td>홍길동</td>
-                          <td>2021-06-21</td>
-                        </tr>
-                        <tr>
-                          <td>2</td>
-                          <td>시나리오 의견</td>
-                          <td>홍길동</td>
-                          <td>2021-06-21</td>
-                        </tr>
-                        <tr>
-                          <td>3</td>
-                          <td>시나리오 의견</td>
-                          <td>홍길동</td>
-                          <td>2021-06-21</td>
-                        </tr>
-                        <tr>
-                          <td>4</td>
-                          <td>시나리오 의견</td>
-                          <td>홍길동</td>
-                          <td>2021-06-21</td>
-                        </tr>
-                      </tbody>
+                      <tr>
+                        <th>순번</th>
+                        <th>제목</th>
+                        <th>작성자</th>
+                        <th>작성일</th>
+                        <th>&nbsp;</th>
+                      </tr>
+                      </thead>
                     </table>
+                    <div class="tbl_scroll" style="height:102px">
+                      <table class="tbl_col">
+                        <caption>시나리오 의견 내용 테이블</caption>
+                        <colgroup>
+                          <col width="120">
+                          <col width="*">
+                          <col width="150">
+                          <col width="150">
+                        </colgroup>
+                        <tbody>
+                          <tr>
+                            <td>1</td>
+                            <td>시나리오 의견</td>
+                            <td>홍길동</td>
+                            <td>2021-06-21</td>
+                          </tr>
+                          <tr>
+                            <td>2</td>
+                            <td>시나리오 의견</td>
+                            <td>홍길동</td>
+                            <td>2021-06-21</td>
+                          </tr>
+                          <tr>
+                            <td>3</td>
+                            <td>시나리오 의견</td>
+                            <td>홍길동</td>
+                            <td>2021-06-21</td>
+                          </tr>
+                          <tr>
+                            <td>4</td>
+                            <td>시나리오 의견</td>
+                            <td>홍길동</td>
+                            <td>2021-06-21</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div class="table_wrap">
-                <div class="tbl_tit flex_wrap f_sb">
-                  <h3 class="tit_h3">훈련목록</h3>
-                </div>
-                <div class="tbl_default">
-                  <table class="tbl_col">
-                    <caption>훈련목록 제목 테이블</caption>
-                    <colgroup>
-                      <col width="140">
-                      <col width="140">
-                      <col width="140">
-                      <col width="140">
-                      <col width="140">
-                      <col width="*">
-                      <col width="200">
-                      <col width="140">
-                      <col width="140">
-                      <col width="120">
-                      <col class="fix_scroll">
-                    </colgroup>
-                    <tr>
-                      <th><label for="">훈련ID</label>
-                      <th><label for="">통보문구분</label>
-                      <th><label for="">지진번호</label>
-                      <th><label for="">진원시</label>
-                      <th><label for="">규모</label>
-                      <th><label for="">위치</label>
-                      <th><label for="">훈련시작시각</label>
-                      <th><label for="">통보수신시각</label>
-                      <th><label for="">통보시각</label>
-                      <th><label for="">총 훈련시간(분)</label>
-                      <th>&nbsp;</th>
-                    </tr>
-                    </thead>
-                  </table>
-                  <div class="tbl_scroll" style="height:241px">
+                <div class="table_wrap">
+                  <div class="tbl_tit flex_wrap f_sb">
+                    <h3 class="tit_h3">훈련목록</h3>
+                  </div>
+                  <div class="tbl_default">
                     <table class="tbl_col">
-                      <caption>훈련목록 내용 테이블</caption>
+                      <caption>훈련목록 제목 테이블</caption>
                       <colgroup>
                         <col width="140">
                         <col width="140">
@@ -220,7 +190,46 @@
                         <col width="140">
                         <col width="120">
                       </colgroup>
+                      <tr>
+                        <th><label for="">훈련ID</label>
+                        <th><label for="">통보문구분</label>
+                        <th><label for="">지진번호</label>
+                        <th><label for="">진원시</label>
+                        <th><label for="">규모</label>
+                        <th><label for="">위치</label>
+                        <th><label for="">훈련시작시각</label>
+                        <th><label for="">통보수신시각</label>
+                        <th><label for="">통보시각</label>
+                        <th><label for="">총 훈련시간(분)</label>
+                      </tr>
+                      </thead>
                       <tbody>
+                        <tr>
+                          <td>T000000010</td>
+                          <td>지진정보</td>
+                          <td>2020014090</td>
+                          <td>2020-10-09 04:38:41</td>
+                          <td>3.0</td>
+                          <td>경북 경주시 남남서쪽 13km 지역</td>
+                          <td>2020-10-09 04:38:41</td>
+                          <td>2020-10-09 04:38:41</td>
+                          <td>2020-10-09
+                            04:38:41</td>
+                          <td>5</td>
+                        </tr>
+                        <tr>
+                          <td>T000000010</td>
+                          <td>지진정보</td>
+                          <td>2020014090</td>
+                          <td>2020-10-09 04:38:41</td>
+                          <td>3.0</td>
+                          <td>경북 경주시 남남서쪽 13km 지역</td>
+                          <td>2020-10-09 04:38:41</td>
+                          <td>2020-10-09 04:38:41</td>
+                          <td>2020-10-09
+                            04:38:41</td>
+                          <td>5</td>
+                        </tr>
                         <tr>
                           <td>T000000010</td>
                           <td>지진정보</td>
@@ -237,15 +246,28 @@
                       </tbody>
                     </table>
                   </div>
+                  <div class="paginate">
+                    <a href="#" class="first" title="처음">〈〈</a>
+                    <a href="#" class="pre" title="이전">〈</a>
+                    <span>
+                      <a href="#" class="on">1</a>
+                      <a href="#">2</a>
+                      <a href="#">3</a>
+                      <a href="#">4</a>
+                    </span>
+                    <a href="#" class="next" title="다음">〉</a>
+                    <a href="#" class="last" title="마지막">〉〉</a>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-          <!-- contents_e -->
         </div>
+        <!-- contents_e -->
       </div>
     </div>
-    <!-- // Contents -->
+  </div>
+  <!-- // Contents -->
   </div>
   @@include('inc/p_scenario02_1.html')
   @@include('inc/p_scenario02_2.html')

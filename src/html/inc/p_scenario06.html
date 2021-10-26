@@ -1,0 +1,426 @@
+<div class="pop_overlay">
+  <div class="pop_wrap p_scenario03">
+    <div class="pop_tit">
+      <h1>시나리오 목록 추가</h1>
+      <button type="button" class="btn_pop_close" closePop></button>
+    </div>
+    <div class="pop_body">
+      <div class="pop_cont">
+          <!-- contents -->
+              <div class="flex_wrap f_sb">
+                <div class="table_wrap">
+                  <div class="tbl_tit flex_wrap f_sb">
+                    <h3 class="tit_h3">통합 지진 목록</h3>
+                  </div>
+                  <div class="search_wrap">
+                    <ul class="search">
+                      <li>
+                        <label for="eq_type" class="dot">발생시각</label>
+                        <select name="eq_type">
+                          <option value="지진종류">지진종류</option>
+                        </select>
+                      </li>
+                      <li>
+                        <label for="date" class="dot">발생시각</label>
+                        <span class="period period_multi">
+                          <input type="text" class="datepicker from" id="date" name="date" placeholder="YYYY-MM-DD"
+                            readonly dataformat="from" title="시작 날짜 선택" value="2021-01-01">
+                          <input type="text" class="datepicker to" name="date" placeholder="YYYY-MM-DD" readonly
+                            dataformat="to" title="종료  날짜 선택" value="2021-01-01">
+                        </span>
+                      </li>
+                      <li>
+                        <label for="scale" class="dot">규모</label>
+                        <span class="period period_multi scale">
+                          <input type="text" value="2.0">
+                          <input type="text" value="6.0">
+                        </span>
+                      </li>
+                      <li>
+                        <label for="searchword" class="dot">검색어</label>
+                        <input type="text" id="searchword" placeholder="발생위치 및 지진명 검색">
+                        <a href="#" class="btn_s btn_navy">검색</a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="tbl_default">
+                    <table class="tbl_col">
+                      <caption>통합 지진 목록 제목 테이블</caption>
+                      <colgroup>
+                        <col width="30">
+                        <col width="80">
+                        <col width="120">
+                        <col width="150">
+                        <col width="60">
+                        <col width="60">
+                        <col width="70">
+                        <col width="*">
+                      </colgroup>
+                      <tr>
+                        <th></th>
+                        <th>지진종류</th>
+                        <th>운영통합지진ID</th>
+                        <th>진원시</th>
+                        <th>규모</th>
+                        <th>깊이</th>
+                        <th>최대진도</th>
+                        <th>위치</th>
+                      </tr>
+                      </thead>
+                      <tbody>
+                        <tr class="on">
+                          <td><input type="checkbox" checked></td>
+                          <td>일반</td>
+                          <td>2020014090</td>
+                          <td>2020-10-09 04:38:41</td>
+                          <td>3.0</td>
+                          <td>15</td>
+                          <td>II</td>
+                          <td>경북 경주시 남남서쪽 13km 지역</td>
+                        </tr>
+                        <tr>
+                          <td><input type="checkbox"></td>
+                          <td>일반</td>
+                          <td>2020014090</td>
+                          <td>2020-10-09 04:38:41</td>
+                          <td>3.0</td>
+                          <td>15</td>
+                          <td>II</td>
+                          <td>경북 경주시 남남서쪽 13km 지역</td>
+                        </tr>
+                        <tr>
+                          <td><input type="checkbox"></td>
+                          <td>일반</td>
+                          <td>2020014090</td>
+                          <td>2020-10-09 04:38:41</td>
+                          <td>3.0</td>
+                          <td>15</td>
+                          <td>II</td>
+                          <td>경북 경주시 남남서쪽 13km 지역</td>
+                        </tr>
+                        <tr>
+                          <td><input type="checkbox"></td>
+                          <td>일반</td>
+                          <td>2020014090</td>
+                          <td>2020-10-09 04:38:41</td>
+                          <td>3.0</td>
+                          <td>15</td>
+                          <td>II</td>
+                          <td>경북 경주시 남남서쪽 13km 지역</td>
+                        </tr>
+                        <tr>
+                          <td><input type="checkbox"></td>
+                          <td>일반</td>
+                          <td>2020014090</td>
+                          <td>2020-10-09 04:38:41</td>
+                          <td>3.0</td>
+                          <td>15</td>
+                          <td>II</td>
+                          <td>경북 경주시 남남서쪽 13km 지역</td>
+                        </tr>
+                        <tr>
+                          <td><input type="checkbox"></td>
+                          <td>일반</td>
+                          <td>2020014090</td>
+                          <td>2020-10-09 04:38:41</td>
+                          <td>3.0</td>
+                          <td>15</td>
+                          <td>II</td>
+                          <td>경북 경주시 남남서쪽 13km 지역</td>
+                        </tr>
+                        <tr>
+                          <td><input type="checkbox"></td>
+                          <td>일반</td>
+                          <td>2020014090</td>
+                          <td>2020-10-09 04:38:41</td>
+                          <td>3.0</td>
+                          <td>15</td>
+                          <td>II</td>
+                          <td>경북 경주시 남남서쪽 13km 지역</td>
+                        </tr>
+                        <tr>
+                          <td><input type="checkbox"></td>
+                          <td>일반</td>
+                          <td>2020014090</td>
+                          <td>2020-10-09 04:38:41</td>
+                          <td>3.0</td>
+                          <td>15</td>
+                          <td>II</td>
+                          <td>경북 경주시 남남서쪽 13km 지역</td>
+                        </tr>
+                        <tr>
+                          <td><input type="checkbox"></td>
+                          <td>일반</td>
+                          <td>2020014090</td>
+                          <td>2020-10-09 04:38:41</td>
+                          <td>3.0</td>
+                          <td>15</td>
+                          <td>II</td>
+                          <td>경북 경주시 남남서쪽 13km 지역</td>
+                        </tr>
+                        <tr>
+                          <td><input type="checkbox"></td>
+                          <td>일반</td>
+                          <td>2020014090</td>
+                          <td>2020-10-09 04:38:41</td>
+                          <td>3.0</td>
+                          <td>15</td>
+                          <td>II</td>
+                          <td>경북 경주시 남남서쪽 13km 지역</td>
+                        </tr>
+                        <tr>
+                          <td><input type="checkbox"></td>
+                          <td>일반</td>
+                          <td>2020014090</td>
+                          <td>2020-10-09 04:38:41</td>
+                          <td>3.0</td>
+                          <td>15</td>
+                          <td>II</td>
+                          <td>경북 경주시 남남서쪽 13km 지역</td>
+                        </tr>
+                        <tr>
+                          <td><input type="checkbox"></td>
+                          <td>일반</td>
+                          <td>2020014090</td>
+                          <td>2020-10-09 04:38:41</td>
+                          <td>3.0</td>
+                          <td>15</td>
+                          <td>II</td>
+                          <td>경북 경주시 남남서쪽 13km 지역</td>
+                        </tr>
+                        <tr>
+                          <td><input type="checkbox"></td>
+                          <td>일반</td>
+                          <td>2020014090</td>
+                          <td>2020-10-09 04:38:41</td>
+                          <td>3.0</td>
+                          <td>15</td>
+                          <td>II</td>
+                          <td>경북 경주시 남남서쪽 13km 지역</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <div class="paginate">
+                    <a href="#" class="first" title="처음">〈〈</a>
+                    <a href="#" class="pre" title="이전">〈</a>
+                    <span>
+                      <a href="#" class="on">1</a>
+                      <a href="#">2</a>
+                      <a href="#">3</a>
+                      <a href="#">4</a>
+                    </span>
+                    <a href="#" class="next" title="다음">〉</a>
+                    <a href="#" class="last" title="마지막">〉〉</a>
+                  </div>
+                </div>
+                <div class="ico_arrow">
+                  <i class="axi axi-keyboard-arrow-right"></i>
+                </div>
+                <div class="table_wrap">
+                  <div class="tbl_tit flex_wrap f_sb">
+                    <h3 class="tit_h3">시나리오 지진해일 목록</h3>
+                  </div>
+                  <div class="tbl_default">
+                    <table class="tbl_col">
+                      <caption>시나리오 지진 목록 제목 테이블</caption>
+                      <colgroup>
+                        <col width="80">
+                        <col width="120">
+                        <col width="150">
+                        <col width="60">
+                        <col width="60">
+                        <col width="70">
+                        <col width="*">
+                      </colgroup>
+                      <tr>
+                        <th>지진종류</th>
+                        <th>운영통합지진ID</th>
+                        <th>진원시</th>
+                        <th>규모</th>
+                        <th>깊이</th>
+                        <th>최대진도</th>
+                        <th>위치</th>
+                      </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>일반</td>
+                          <td>2020014090</td>
+                          <td>2020-10-09 04:38:41</td>
+                          <td>3.0</td>
+                          <td>15</td>
+                          <td>II</td>
+                          <td>경북 경주시 남남서쪽 13km 지역</td>
+                        </tr>
+                        <tr>
+                          <td>일반</td>
+                          <td>2020014090</td>
+                          <td>2020-10-09 04:38:41</td>
+                          <td>3.0</td>
+                          <td>15</td>
+                          <td>II</td>
+                          <td>경북 경주시 남남서쪽 13km 지역</td>
+                        </tr>
+                        <tr>
+                          <td>일반</td>
+                          <td>2020014090</td>
+                          <td>2020-10-09 04:38:41</td>
+                          <td>3.0</td>
+                          <td>15</td>
+                          <td>II</td>
+                          <td>경북 경주시 남남서쪽 13km 지역</td>
+                        </tr>
+                        <tr>
+                          <td>일반</td>
+                          <td>2020014090</td>
+                          <td>2020-10-09 04:38:41</td>
+                          <td>3.0</td>
+                          <td>15</td>
+                          <td>II</td>
+                          <td>경북 경주시 남남서쪽 13km 지역</td>
+                        </tr>
+                        <tr>
+                          <td>일반</td>
+                          <td>2020014090</td>
+                          <td>2020-10-09 04:38:41</td>
+                          <td>3.0</td>
+                          <td>15</td>
+                          <td>II</td>
+                          <td>경북 경주시 남남서쪽 13km 지역</td>
+                        </tr>
+                        <tr>
+                          <td>일반</td>
+                          <td>2020014090</td>
+                          <td>2020-10-09 04:38:41</td>
+                          <td>3.0</td>
+                          <td>15</td>
+                          <td>II</td>
+                          <td>경북 경주시 남남서쪽 13km 지역</td>
+                        </tr>
+                        <tr>
+                          <td>일반</td>
+                          <td>2020014090</td>
+                          <td>2020-10-09 04:38:41</td>
+                          <td>3.0</td>
+                          <td>15</td>
+                          <td>II</td>
+                          <td>경북 경주시 남남서쪽 13km 지역</td>
+                        </tr>
+                        <tr>
+                          <td>일반</td>
+                          <td>2020014090</td>
+                          <td>2020-10-09 04:38:41</td>
+                          <td>3.0</td>
+                          <td>15</td>
+                          <td>II</td>
+                          <td>경북 경주시 남남서쪽 13km 지역</td>
+                        </tr>
+                        <tr>
+                          <td>일반</td>
+                          <td>2020014090</td>
+                          <td>2020-10-09 04:38:41</td>
+                          <td>3.0</td>
+                          <td>15</td>
+                          <td>II</td>
+                          <td>경북 경주시 남남서쪽 13km 지역</td>
+                        </tr>
+                        <tr>
+                          <td>일반</td>
+                          <td>2020014090</td>
+                          <td>2020-10-09 04:38:41</td>
+                          <td>3.0</td>
+                          <td>15</td>
+                          <td>II</td>
+                          <td>경북 경주시 남남서쪽 13km 지역</td>
+                        </tr>
+                        <tr>
+                          <td>일반</td>
+                          <td>2020014090</td>
+                          <td>2020-10-09 04:38:41</td>
+                          <td>3.0</td>
+                          <td>15</td>
+                          <td>II</td>
+                          <td>경북 경주시 남남서쪽 13km 지역</td>
+                        </tr>
+                        <tr>
+                          <td>일반</td>
+                          <td>2020014090</td>
+                          <td>2020-10-09 04:38:41</td>
+                          <td>3.0</td>
+                          <td>15</td>
+                          <td>II</td>
+                          <td>경북 경주시 남남서쪽 13km 지역</td>
+                        </tr>
+                        <tr>
+                          <td>일반</td>
+                          <td>2020014090</td>
+                          <td>2020-10-09 04:38:41</td>
+                          <td>3.0</td>
+                          <td>15</td>
+                          <td>II</td>
+                          <td>경북 경주시 남남서쪽 13km 지역</td>
+                        </tr>
+                        <tr>
+                          <td>일반</td>
+                          <td>2020014090</td>
+                          <td>2020-10-09 04:38:41</td>
+                          <td>3.0</td>
+                          <td>15</td>
+                          <td>II</td>
+                          <td>경북 경주시 남남서쪽 13km 지역</td>
+                        </tr>
+                        <tr>
+                          <td>일반</td>
+                          <td>2020014090</td>
+                          <td>2020-10-09 04:38:41</td>
+                          <td>3.0</td>
+                          <td>15</td>
+                          <td>II</td>
+                          <td>경북 경주시 남남서쪽 13km 지역</td>
+                        </tr>
+                        <tr>
+                          <td>일반</td>
+                          <td>2020014090</td>
+                          <td>2020-10-09 04:38:41</td>
+                          <td>3.0</td>
+                          <td>15</td>
+                          <td>II</td>
+                          <td>경북 경주시 남남서쪽 13km 지역</td>
+                        </tr>
+                        <tr>
+                          <td>일반</td>
+                          <td>2020014090</td>
+                          <td>2020-10-09 04:38:41</td>
+                          <td>3.0</td>
+                          <td>15</td>
+                          <td>II</td>
+                          <td>경북 경주시 남남서쪽 13km 지역</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <div class="paginate">
+                    <a href="#" class="first" title="처음">〈〈</a>
+                    <a href="#" class="pre" title="이전">〈</a>
+                    <span>
+                      <a href="#" class="on">1</a>
+                      <a href="#">2</a>
+                      <a href="#">3</a>
+                      <a href="#">4</a>
+                    </span>
+                    <a href="#" class="next" title="다음">〉</a>
+                    <a href="#" class="last" title="마지막">〉〉</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+        <!-- contents_e -->
+        <div class="btn_wrap alignR">
+          <button type="button" class="btn_s btn_navy">추가</button>
+          <button type="button" class="btn_s btn_deepgray">닫기</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

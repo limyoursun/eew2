@@ -4,7 +4,7 @@
   <div id="wrap">
     @@include('inc/header.html')
     <!-- Contents -->
-    <div id="section" class="training inner_wrap">
+    <div id="section" class="inner_wrap">
       <div class="contents">
         <input id="tabChk" type="hidden" value="3">
         <div class="sub_content" id="contentArea">
@@ -28,122 +28,86 @@
           </div>
           <!-- subTab_e -->
           <!-- contents -->
-          <div class="sub_tab_box">
-            <div class="stit_bg">
-              <h2>훈련실시 (지진해일)</h2>
-            </div>
-            <div class="contents_wrap">
-              <table class="table_wrap tbl_row">
-                <caption>훈련 옵션</caption>
-                <colgroup>
-                  <col width="180">
-                  <col width="250">
-                  <col width="*">
-                </colgroup>
-                <tr>
-                  <th><label for="datetime">발생일시</label></th>
-                  <td colspan="2"><span id="datetime">2021-06-23 13시 32분 20초</span></td>
-                </tr>
-                <tr>
-                  <th><label for="">목적</label></th>
-                  <td><span>신규 통보사 훈련</span></td>
-                  <td class="sequence_training">
-                    <input type="radio" id="training1" name="training">
-                    <label for="training1">분석부터 훈련</label>
-                    <input type="radio" id="training2" name="training">
-                    <label for="training2">통보부터 훈련</label>
-                    <input type="checkbox" id="training3" name="training">
-                    <label for="training3">무작위 훈련</label>
-                  </td>
-                  <script>
-                    $(function () {
-                      $("#training3").click(function () {
-                        var chk = $(this).is(':checked');
-                        if (chk) {
-                          $("#training1, #training2").attr('disabled', true);
-                          $(".tbl_default").addClass('on');
-                        }
-                        else {
-                          $("#training1, #training2").attr('disabled', false);
-                          $(".tbl_default").removeClass('on');
-                        }
+          <div class="sub_tab_box training">
+            <div class="training">
+              <div class="stit_bg">
+                <h2>훈련실시 (지진해일)</h2>
+              </div>
+              <div class="contents_wrap">
+                <table class="table_wrap tbl_row">
+                  <caption>훈련 옵션</caption>
+                  <colgroup>
+                    <col width="180">
+                    <col width="250">
+                    <col width="*">
+                  </colgroup>
+                  <tr>
+                    <th><label for="datetime">발생일시</label></th>
+                    <td colspan="2"><span id="datetime">2021-06-23 13시 32분 20초</span></td>
+                  </tr>
+                  <tr>
+                    <th><label for="">목적</label></th>
+                    <td><span>신규 통보사 훈련</span></td>
+                    <td class="sequence_training">
+                      <input type="radio" id="training1" name="training">
+                      <label for="training1">분석부터 훈련</label>
+                      <input type="radio" id="training2" name="training">
+                      <label for="training2">통보부터 훈련</label>
+                      <input type="checkbox" id="training3" name="training">
+                      <label for="training3">무작위 훈련</label>
+                    </td>
+                    <script>
+                      $(function () {
+                        $("#training3").click(function () {
+                          var chk = $(this).is(':checked');
+                          if (chk) {
+                            $("#training1, #training2").attr('disabled', true);
+                            $(".tbl_default").addClass('on');
+                          }
+                          else {
+                            $("#training1, #training2").attr('disabled', false);
+                            $(".tbl_default").removeClass('on');
+                          }
+                        });
                       });
-                    });
-                  </script>
-                </tr>
-                <tr>
-                  <th><label for="attendee">참석자</label></th>
-                  <td colspan="2">
-                    <select name="attendee" class="input_100px">
-                      <option value="선택">선택</option>
-                      <option value="팀장">팀장</option>
-                    </select>
-                    <select name="attendee" class="input_100px">
-                      <option value="선택">선택</option>
-                      <option value="홍길동">홍길동</option>
-                    </select>
-                    <a href="#" class="btn_m btn_blue">추가</a>
-                    <ul class="attendee_wrap">
-                      <li>
-                        <span>분석</span>
-                        <span>뽀로로</span>
-                      </li>
-                      <li>
-                        <span>분석</span>
-                        <span>뿡뿡이</span>
-                      </li>
-                      <li>
-                        <span>분석</span>
-                        <span>뚝딱이</span>
-                      </li>
-                    </ul>
-                  </td>
-                </tr>
-              </table>
-              <div class="table_wrap">
-                <div class="tbl_tit flex_wrap f_sb">
-                  <h3 class="tit_h3">지진</h3>
-                </div>
-                <div class="tbl_default">
-                  <table class="tbl_col">
-                    <caption>훈련실시 제목 테이블</caption>
-                    <colgroup>
-                      <col width="35">
-                      <col width="60">
-                      <col width="140">
-                      <col width="140">
-                      <col width="140">
-                      <col width="200">
-                      <col width="100">
-                      <col width="100">
-                      <col width="120">
-                      <col width="*">
-                      <col width="70">
-                      <col width="70">
-                      <col width="70">
-                      <col class="fix_scroll">
-                    </colgroup>
-                    <tr>
-                      <th></th>
-                      <th>순번</th>
-                      <th>시나리오 ID</th>
-                      <th>지진종류</th>
-                      <th>운영통합지진 ID</th>
-                      <th>진원시</th>
-                      <th>규모</th>
-                      <th>깊이</th>
-                      <th>최대진도</th>
-                      <th>위치</th>
-                      <th>파형유무</th>
-                      <th>수동생성</th>
-                      <th>훈련횟수</th>
-                      <th>&nbsp;</th>
-                    </tr>
-                    </thead>
-                  </table>
-                  <div class="tbl_scroll" style="height:418px">
+                    </script>
+                  </tr>
+                  <tr>
+                    <th><label for="attendee">참석자</label></th>
+                    <td colspan="2">
+                      <select name="attendee" class="input_100px">
+                        <option value="선택">선택</option>
+                        <option value="팀장">팀장</option>
+                      </select>
+                      <select name="attendee" class="input_100px">
+                        <option value="선택">선택</option>
+                        <option value="홍길동">홍길동</option>
+                      </select>
+                      <a href="#" class="btn_m btn_blue">추가</a>
+                      <ul class="attendee_wrap">
+                        <li>
+                          <span>분석</span>
+                          <span>뽀로로</span>
+                        </li>
+                        <li>
+                          <span>분석</span>
+                          <span>뿡뿡이</span>
+                        </li>
+                        <li>
+                          <span>분석</span>
+                          <span>뚝딱이</span>
+                        </li>
+                      </ul>
+                    </td>
+                  </tr>
+                </table>
+                <div class="table_wrap">
+                  <div class="tbl_tit flex_wrap f_sb">
+                    <h3 class="tit_h3">지진</h3>
+                  </div>
+                  <div class="tbl_default">
                     <table class="tbl_col">
-                      <caption>훈련실시 내용 테이블</caption>
+                      <caption>훈련실시 제목 테이블</caption>
                       <colgroup>
                         <col width="35">
                         <col width="60">
@@ -159,6 +123,22 @@
                         <col width="70">
                         <col width="70">
                       </colgroup>
+                      <tr>
+                        <th></th>
+                        <th>순번</th>
+                        <th>시나리오 ID</th>
+                        <th>지진종류</th>
+                        <th>운영통합지진 ID</th>
+                        <th>진원시</th>
+                        <th>규모</th>
+                        <th>깊이</th>
+                        <th>최대진도</th>
+                        <th>위치</th>
+                        <th>파형유무</th>
+                        <th>수동생성</th>
+                        <th>훈련횟수</th>
+                      </tr>
+                      </thead>
                       <tbody>
                         <tr>
                           <td><input type="radio" name="select"></td>
@@ -250,21 +230,108 @@
                           <td>y</td>
                           <td>5</td>
                         </tr>
+                        <tr>
+                          <td><input type="radio" name="select"></td>
+                          <td>1</td>
+                          <td>2020014090</td>
+                          <td>자연</td>
+                          <td>2021000712</td>
+                          <td>2020-10-09 04:38:41</td>
+                          <td>3.0</td>
+                          <td>10</td>
+                          <td>II</td>
+                          <td>경북 경주시 남남서쪽 13km 지역</td>
+                          <td>y</td>
+                          <td>y</td>
+                          <td>5</td>
+                        </tr>
+                        <tr>
+                          <td><input type="radio" name="select"></td>
+                          <td>1</td>
+                          <td>2020014090</td>
+                          <td>자연</td>
+                          <td>2021000712</td>
+                          <td>2020-10-09 04:38:41</td>
+                          <td>3.0</td>
+                          <td>10</td>
+                          <td>II</td>
+                          <td>경북 경주시 남남서쪽 13km 지역</td>
+                          <td>y</td>
+                          <td>y</td>
+                          <td>5</td>
+                        </tr>
+                        <tr>
+                          <td><input type="radio" name="select"></td>
+                          <td>1</td>
+                          <td>2020014090</td>
+                          <td>자연</td>
+                          <td>2021000712</td>
+                          <td>2020-10-09 04:38:41</td>
+                          <td>3.0</td>
+                          <td>10</td>
+                          <td>II</td>
+                          <td>경북 경주시 남남서쪽 13km 지역</td>
+                          <td>y</td>
+                          <td>y</td>
+                          <td>5</td>
+                        </tr>
+                        <tr>
+                          <td><input type="radio" name="select"></td>
+                          <td>1</td>
+                          <td>2020014090</td>
+                          <td>자연</td>
+                          <td>2021000712</td>
+                          <td>2020-10-09 04:38:41</td>
+                          <td>3.0</td>
+                          <td>10</td>
+                          <td>II</td>
+                          <td>경북 경주시 남남서쪽 13km 지역</td>
+                          <td>y</td>
+                          <td>y</td>
+                          <td>5</td>
+                        </tr>
+                        <tr>
+                          <td><input type="radio" name="select"></td>
+                          <td>1</td>
+                          <td>2020014090</td>
+                          <td>자연</td>
+                          <td>2021000712</td>
+                          <td>2020-10-09 04:38:41</td>
+                          <td>3.0</td>
+                          <td>10</td>
+                          <td>II</td>
+                          <td>경북 경주시 남남서쪽 13km 지역</td>
+                          <td>y</td>
+                          <td>y</td>
+                          <td>5</td>
+                        </tr>
                       </tbody>
                     </table>
                   </div>
+                  <div class="paginate">
+                    <a href="#" class="first" title="처음">〈〈</a>
+                    <a href="#" class="pre" title="이전">〈</a>
+                    <span>
+                      <a href="#" class="on">1</a>
+                      <a href="#">2</a>
+                      <a href="#">3</a>
+                      <a href="#">4</a>
+                    </span>
+                    <a href="#" class="next" title="다음">〉</a>
+                    <a href="#" class="last" title="마지막">〉〉</a>
+                  </div>
                 </div>
-              </div>
-              <div class="alignC">
+              <div class="alignR">
                 <a href="#" class="btn_l btn_blue">훈련시작</a>
               </div>
             </div>
           </div>
-          <!-- contents_e -->
         </div>
+        <!-- contents_e -->
       </div>
     </div>
-    <!-- // Contents -->
+  </div>
+  <!-- // Contents -->
   </div>
 </body>
 

@@ -4,7 +4,7 @@
   <div id="wrap">
     @@include('inc/header.html')
     <!-- Contents -->
-    <div id="section" class="scenario01 inner_wrap">
+    <div id="section" class="inner_wrap">
       <div class="contents">
         <input id="tabChk" type="hidden" value="3">
         <div class="sub_content" id="contentArea">
@@ -29,85 +29,49 @@
           <!-- subTab_e -->
           <!-- contents -->
           <div class="sub_tab_box">
-            <div class="stit_bg">
-              <h2>시나리오 목록</h2>
-            </div>
-            <div class="contents_wrap">
-              <div class="search_wrap">
-                <ul class="search">
-                  <li>
-                    <label for="date" class="dot">발생시각</label>
-                    <span class="period period_multi">
-                      <input type="text" class="datepicker from" id="date" name="date" placeholder="YYYY-MM-DD" readonly
-                        dataformat="from" title="시작 날짜 선택" value="2021-01-01">
-                      <input type="text" class="datepicker to" name="date" placeholder="YYYY-MM-DD" readonly
-                        dataformat="to" title="종료  날짜 선택" value="2021-01-01">
-                    </span>
-                  </li>
-                  <li>
-                    <label for="scale" class="dot">규모</label>
-                    <span class="period period_multi scale">
-                      <input type="text" value="2.0">
-                      <input type="text" value="6.0">
-                    </span>
-                  </li>
-                  <li>
-                    <label for="searchword" class="dot">검색어</label>
-                    <input type="text" id="searchword" placeholder="발생위치 및 지진명 검색">
-                    <a href="#" class="btn_s btn_navy">검색</a>
-                    <a href="#" class="btn_s btn_blue">초기화</a>
-                  </li>
-                </ul>
+            <div class="scenario01">
+              <div class="stit_bg">
+                <h2>시나리오 목록</h2>
               </div>
-              <div class="table_wrap">
-                <div class="tbl_tit flex_wrap f_sb">
-                  <h3 class="tit_h3">지진</h3>
-                  <div class="btn_wrap">
-                    <a href="#" class="btn_m btn_mint">목록추가</a>
-                    <a href="#" class="btn_m btn_mint">신규생성</a>
-                    <a href="#" class="btn_m btn_deepgray">삭제</a>
-                  </div>
+              <div class="contents_wrap">
+                <div class="search_wrap">
+                  <ul class="search">
+                    <li>
+                      <label for="date" class="dot">발생시각</label>
+                      <span class="period period_multi">
+                        <input type="text" class="datepicker from" id="date" name="date" placeholder="YYYY-MM-DD"
+                          readonly dataformat="from" title="시작 날짜 선택" value="2021-01-01">
+                        <input type="text" class="datepicker to" name="date" placeholder="YYYY-MM-DD" readonly
+                          dataformat="to" title="종료  날짜 선택" value="2021-01-01">
+                      </span>
+                    </li>
+                    <li>
+                      <label for="scale" class="dot">규모</label>
+                      <span class="period period_multi scale">
+                        <input type="text" value="2.0">
+                        <input type="text" value="6.0">
+                      </span>
+                    </li>
+                    <li>
+                      <label for="searchword" class="dot">검색어</label>
+                      <input type="text" id="searchword" placeholder="발생위치 및 지진명 검색">
+                      <a href="#" class="btn_s btn_navy">검색</a>
+                      <a href="#" class="btn_s btn_blue">초기화</a>
+                    </li>
+                  </ul>
                 </div>
-                <div class="tbl_default">
-                  <table class="tbl_col">
-                    <caption>처리결과 제목 테이블</caption>
-                    <colgroup>
-                      <col width="35">
-                      <col width="60">
-                      <col width="140">
-                      <col width="140">
-                      <col width="140">
-                      <col width="200">
-                      <col width="100">
-                      <col width="100">
-                      <col width="100">
-                      <col width="*">
-                      <col width="70">
-                      <col width="70">
-                      <col width="70">
-                      <col class="fix_scroll">
-                    </colgroup>
-                    <tr>
-                      <th><label for=""></label>
-                      <th><label for="">순번</label>
-                      <th><label for="">시나리오 ID</label>
-                      <th><label for="">지진종류</label>
-                      <th><label for="">운영통합지진 ID</label>
-                      <th><label for="">진원시</label>
-                      <th><label for="">규모</label>
-                      <th><label for="">깊이</label>
-                      <th><label for="">최대진도</label>
-                      <th><label for="">위치</label>
-                      <th><label for="">파형유무</label>
-                      <th><label for="">수동생성</label>
-                      <th><label for="">훈련횟수</label>
-                      <th>&nbsp;</th>
-                    </tr>
-                    </thead>
-                  </table>
-                  <div class="tbl_scroll" style="height:565px">
+                <div class="table_wrap">
+                  <div class="tbl_tit flex_wrap f_sb">
+                    <h3 class="tit_h3">지진</h3>
+                    <div class="btn_wrap">
+                      <a href="#" class="btn_m btn_mint">목록추가</a>
+                      <a href="#" class="btn_m btn_mint">신규생성</a>
+                      <a href="#" class="btn_m btn_deepgray">삭제</a>
+                    </div>
+                  </div>
+                  <div class="tbl_default">
                     <table class="tbl_col">
-                      <caption>처리결과 내용 테이블</caption>
+                      <caption>처리결과 제목 테이블</caption>
                       <colgroup>
                         <col width="35">
                         <col width="60">
@@ -117,12 +81,28 @@
                         <col width="200">
                         <col width="100">
                         <col width="100">
-                        <col width="120">
+                        <col width="100">
                         <col width="*">
                         <col width="70">
                         <col width="70">
                         <col width="70">
                       </colgroup>
+                      <tr>
+                        <th><label for=""></label>
+                        <th><label for="">순번</label>
+                        <th><label for="">시나리오 ID</label>
+                        <th><label for="">지진종류</label>
+                        <th><label for="">운영통합지진 ID</label>
+                        <th><label for="">진원시</label>
+                        <th><label for="">규모</label>
+                        <th><label for="">깊이</label>
+                        <th><label for="">최대진도</label>
+                        <th><label for="">위치</label>
+                        <th><label for="">파형유무</label>
+                        <th><label for="">수동생성</label>
+                        <th><label for="">훈련횟수</label>
+                      </tr>
+                      </thead>
                       <tbody>
                         <tr>
                           <td><input type="checkbox"></td>
@@ -214,20 +194,169 @@
                           <td>y</td>
                           <td>5</td>
                         </tr>
+                        <tr>
+                          <td><input type="checkbox"></td>
+                          <td>1</td>
+                          <td>2020014090</td>
+                          <td>자연</td>
+                          <td>2021000712</td>
+                          <td>2020-10-09 04:38:41</td>
+                          <td>3.0</td>
+                          <td>10</td>
+                          <td>II</td>
+                          <td>경북 경주시 남남서쪽 13km 지역</td>
+                          <td>y</td>
+                          <td>y</td>
+                          <td>5</td>
+                        </tr>
+                        <tr>
+                          <td><input type="checkbox"></td>
+                          <td>1</td>
+                          <td>2020014090</td>
+                          <td>자연</td>
+                          <td>2021000712</td>
+                          <td>2020-10-09 04:38:41</td>
+                          <td>3.0</td>
+                          <td>10</td>
+                          <td>II</td>
+                          <td>경북 경주시 남남서쪽 13km 지역</td>
+                          <td>y</td>
+                          <td>y</td>
+                          <td>5</td>
+                        </tr>
+                        <tr>
+                          <td><input type="checkbox"></td>
+                          <td>1</td>
+                          <td>2020014090</td>
+                          <td>자연</td>
+                          <td>2021000712</td>
+                          <td>2020-10-09 04:38:41</td>
+                          <td>3.0</td>
+                          <td>10</td>
+                          <td>II</td>
+                          <td>경북 경주시 남남서쪽 13km 지역</td>
+                          <td>y</td>
+                          <td>y</td>
+                          <td>5</td>
+                        </tr>
+                        <tr>
+                          <td><input type="checkbox"></td>
+                          <td>1</td>
+                          <td>2020014090</td>
+                          <td>자연</td>
+                          <td>2021000712</td>
+                          <td>2020-10-09 04:38:41</td>
+                          <td>3.0</td>
+                          <td>10</td>
+                          <td>II</td>
+                          <td>경북 경주시 남남서쪽 13km 지역</td>
+                          <td>y</td>
+                          <td>y</td>
+                          <td>5</td>
+                        </tr>
+                        <tr>
+                          <td><input type="checkbox"></td>
+                          <td>1</td>
+                          <td>2020014090</td>
+                          <td>자연</td>
+                          <td>2021000712</td>
+                          <td>2020-10-09 04:38:41</td>
+                          <td>3.0</td>
+                          <td>10</td>
+                          <td>II</td>
+                          <td>경북 경주시 남남서쪽 13km 지역</td>
+                          <td>y</td>
+                          <td>y</td>
+                          <td>5</td>
+                        </tr>
+                        <tr>
+                          <td><input type="checkbox"></td>
+                          <td>1</td>
+                          <td>2020014090</td>
+                          <td>자연</td>
+                          <td>2021000712</td>
+                          <td>2020-10-09 04:38:41</td>
+                          <td>3.0</td>
+                          <td>10</td>
+                          <td>II</td>
+                          <td>경북 경주시 남남서쪽 13km 지역</td>
+                          <td>y</td>
+                          <td>y</td>
+                          <td>5</td>
+                        </tr>
+                        <tr>
+                          <td><input type="checkbox"></td>
+                          <td>1</td>
+                          <td>2020014090</td>
+                          <td>자연</td>
+                          <td>2021000712</td>
+                          <td>2020-10-09 04:38:41</td>
+                          <td>3.0</td>
+                          <td>10</td>
+                          <td>II</td>
+                          <td>경북 경주시 남남서쪽 13km 지역</td>
+                          <td>y</td>
+                          <td>y</td>
+                          <td>5</td>
+                        </tr>
+                        <tr>
+                          <td><input type="checkbox"></td>
+                          <td>1</td>
+                          <td>2020014090</td>
+                          <td>자연</td>
+                          <td>2021000712</td>
+                          <td>2020-10-09 04:38:41</td>
+                          <td>3.0</td>
+                          <td>10</td>
+                          <td>II</td>
+                          <td>경북 경주시 남남서쪽 13km 지역</td>
+                          <td>y</td>
+                          <td>y</td>
+                          <td>5</td>
+                        </tr>
+                        <tr>
+                          <td><input type="checkbox"></td>
+                          <td>1</td>
+                          <td>2020014090</td>
+                          <td>자연</td>
+                          <td>2021000712</td>
+                          <td>2020-10-09 04:38:41</td>
+                          <td>3.0</td>
+                          <td>10</td>
+                          <td>II</td>
+                          <td>경북 경주시 남남서쪽 13km 지역</td>
+                          <td>y</td>
+                          <td>y</td>
+                          <td>5</td>
+                        </tr>
                       </tbody>
                     </table>
+                  </div>
+                  <div class="paginate">
+                    <a href="#" class="first" title="처음">〈〈</a>
+                    <a href="#" class="pre" title="이전">〈</a>
+                    <span>
+                      <a href="#" class="on">1</a>
+                      <a href="#">2</a>
+                      <a href="#">3</a>
+                      <a href="#">4</a>
+                    </span>
+                    <a href="#" class="next" title="다음">〉</a>
+                    <a href="#" class="last" title="마지막">〉〉</a>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <!-- contents_e -->
         </div>
+        <!-- contents_e -->
       </div>
     </div>
-    <!-- // Contents -->
+  </div>
+  <!-- // Contents -->
   </div>
   @@include('inc/p_scenario01.html')
+  @@include('inc/p_scenario03.html')
 </body>
 
 </html>

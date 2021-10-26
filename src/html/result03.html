@@ -4,7 +4,7 @@
   <div id="wrap">
     @@include('inc/header.html')
     <!-- Contents -->
-    <div id="section" class="result inner_wrap">
+    <div id="section" class="inner_wrap">
       <div class="contents">
         <input id="tabChk" type="hidden" value="3">
         <div class="sub_content" id="contentArea">
@@ -29,80 +29,46 @@
           <!-- subTab_e -->
           <!-- contents -->
           <div class="sub_tab_box">
-            <div class="stit_bg">
-              <h2>훈련결과 상세 (화산)</h2>
-            </div>
-            <div class="contents_wrap">
-              <div class="search_wrap">
-                <ul class="search">
-                  <li>
-                    <label for="date" class="dot">훈련일자</label>
-                    <span class="period period_multi">
-                      <input type="text" class="datepicker from" id="date" name="date" placeholder="YYYY-MM-DD" readonly
-                        dataformat="from" title="시작 날짜 선택" value="2021-01-01">
-                      <input type="text" class="datepicker to" name="date" placeholder="YYYY-MM-DD" readonly
-                        dataformat="to" title="종료  날짜 선택" value="2021-01-01">
-                    </span>
-                  </li>
-                  <li>
-                    <label for="type" class="dot type">훈련종류</label>
-                    <select name="type">
-                      <option value="지진">지진</option>
-                      <option value="지진">지진</option>
-                    </select>
-                  </li>
-                  <li>
-                    <label for="searchword" class="dot">시나리오ID</label>
-                    <input type="text" id="searchword" placeholder="시나리오 ID">
-                    <a href="#" class="btn_s btn_navy">검색</a>
-                  </li>
-                </ul>
+            <div class="result">
+              <div class="stit_bg">
+                <h2>훈련결과 상세 (화산)</h2>
               </div>
-              <div class="table_wrap">
-                <div class="tbl_tit flex_wrap f_sb">
-                  <h3 class="tit_h3">훈련결과 목록</h3>
-                  <div class="btn_wrap">
-                    <a href="#" class="btn_m btn_mint">다운로드</a>
-                  </div>
+              <div class="contents_wrap">
+                <div class="search_wrap">
+                  <ul class="search">
+                    <li>
+                      <label for="date" class="dot">훈련일자</label>
+                      <span class="period period_multi">
+                        <input type="text" class="datepicker from" id="date" name="date" placeholder="YYYY-MM-DD"
+                          readonly dataformat="from" title="시작 날짜 선택" value="2021-01-01">
+                        <input type="text" class="datepicker to" name="date" placeholder="YYYY-MM-DD" readonly
+                          dataformat="to" title="종료  날짜 선택" value="2021-01-01">
+                      </span>
+                    </li>
+                    <li>
+                      <label for="type" class="dot type">훈련종류</label>
+                      <select name="type">
+                        <option value="지진">지진</option>
+                        <option value="지진">지진</option>
+                      </select>
+                    </li>
+                    <li>
+                      <label for="searchword" class="dot">시나리오ID</label>
+                      <input type="text" id="searchword" placeholder="시나리오 ID">
+                      <a href="#" class="btn_s btn_navy">검색</a>
+                    </li>
+                  </ul>
                 </div>
-                <div class="tbl_default">
-                  <table class="tbl_col">
-                    <caption>훈련결과 제목 테이블</caption>
-                    <colgroup>
-                      <col width="100">
-                      <col width="80">
-                      <col width="100">
-                      <col width="100">
-                      <col width="150">
-                      <col width="150">
-                      <col width="70">
-                      <col width="*">
-                      <col width="150">
-                      <col width="150">
-                      <col width="130">
-                      <col width="280">
-                      <col class="fix_scroll">
-                    </colgroup>
-                    <tr>
-                      <th><label for="">훈련ID</label>
-                      <th><label for="">구분</label>
-                      <th><label for="">훈련구분</label>
-                      <th><label for="">시나리오ID</label>
-                      <th><label for="">지진번호/화산번호</label>
-                      <th><label for="">진원시/분화시각</label>
-                      <th><label for="">규모</label>
-                      <th><label for="">발생위치</label>
-                      <th><label for="">훈련시작시각</label>
-                      <th><label for="">훈련완료시각</label>
-                      <th><label for="">총 훈련시간(분)</label>
-                      <th><label for="">훈련 참석자</label>
-                      <th>&nbsp;</th>
-                    </tr>
-                    </thead>
-                  </table>
-                  <div class="tbl_scroll" style="height:102px">
+                <div class="table_wrap">
+                  <div class="tbl_tit flex_wrap f_sb">
+                    <h3 class="tit_h3">훈련결과 목록</h3>
+                    <div class="btn_wrap">
+                      <a href="#" class="btn_m btn_mint">다운로드</a>
+                    </div>
+                  </div>
+                  <div class="tbl_default">
                     <table class="tbl_col">
-                      <caption>훈련결과 내용 테이블</caption>
+                      <caption>훈련결과 제목 테이블</caption>
                       <colgroup>
                         <col width="100">
                         <col width="80">
@@ -117,6 +83,21 @@
                         <col width="130">
                         <col width="280">
                       </colgroup>
+                      <tr>
+                        <th><label for="">훈련ID</label>
+                        <th><label for="">구분</label>
+                        <th><label for="">훈련구분</label>
+                        <th><label for="">시나리오ID</label>
+                        <th><label for="">지진번호/화산번호</label>
+                        <th><label for="">진원시/분화시각</label>
+                        <th><label for="">규모</label>
+                        <th><label for="">발생위치</label>
+                        <th><label for="">훈련시작시각</label>
+                        <th><label for="">훈련완료시각</label>
+                        <th><label for="">총 훈련시간(분)</label>
+                        <th><label for="">훈련 참석자</label>
+                      </tr>
+                      </thead>
                       <tbody>
                         <tr>
                           <td>T000000010</td>
@@ -162,6 +143,18 @@
                         </tr>
                       </tbody>
                     </table>
+                  </div>
+                  <div class="paginate">
+                    <a href="#" class="first" title="처음">〈〈</a>
+                    <a href="#" class="pre" title="이전">〈</a>
+                    <span>
+                      <a href="#" class="on">1</a>
+                      <a href="#">2</a>
+                      <a href="#">3</a>
+                      <a href="#">4</a>
+                    </span>
+                    <a href="#" class="next" title="다음">〉</a>
+                    <a href="#" class="last" title="마지막">〉〉</a>
                   </div>
                 </div>
               </div>
@@ -418,9 +411,10 @@
             </div>
           </div>
         </div>
-        <!-- contents_e -->
       </div>
+      <!-- contents_e -->
     </div>
+  </div>
   </div>
   <!-- // Contents -->
   </div>

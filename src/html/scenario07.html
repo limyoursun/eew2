@@ -4,7 +4,7 @@
   <div id="wrap">
     @@include('inc/header.html')
     <!-- Contents -->
-    <div id="section" class="scenario07 inner_wrap">
+    <div id="section" class="inner_wrap">
       <div class="contents">
         <input id="tabChk" type="hidden" value="3">
         <div class="sub_content" id="contentArea">
@@ -29,79 +29,42 @@
           <!-- subTab_e -->
           <!-- contents -->
           <div class="sub_tab_box">
-            <div class="stit_bg">
-              <h2>시나리오 목록</h2>
-            </div>
-            <div class="contents_wrap">
-              <div class="search_wrap">
-                <ul class="search">
-                  <li>
-                    <label for="date" class="dot">발생시각</label>
-                    <span class="period period_multi">
-                      <input type="text" class="datepicker from" id="date" name="date" placeholder="YYYY-MM-DD" readonly
-                        dataformat="from" title="시작 날짜 선택" value="2021-01-01">
-                      <input type="text" class="datepicker to" name="date" placeholder="YYYY-MM-DD" readonly
-                        dataformat="to" title="종료  날짜 선택" value="2021-01-01">
-                    </span>
-                  </li>
-                  <li>
-                    <label for="searchword" class="dot">검색어</label>
-                    <input type="text" id="searchword" placeholder="화산번호, 화산명, 분화위치">
-                    <a href="#" class="btn_s btn_navy">검색</a>
-                    <a href="#" class="btn_s btn_blue">초기화</a>
-                  </li>
-                </ul>
+            <div class="scenario07">
+              <div class="stit_bg">
+                <h2>시나리오 목록</h2>
               </div>
-              <div class="table_wrap">
-                <div class="tbl_tit flex_wrap f_sb">
-                  <h3 class="tit_h3">화산</h3>
-                  <div class="btn_wrap">
-                    <a href="#" class="btn_m  btn_mint">목록추가</a>
-                    <a href="#" class="btn_m btn_mint">신규생성</a>
-                    <a href="#" class="btn_m btn_deepgray">삭제</a>
-                  </div>
+              <div class="contents_wrap">
+                <div class="search_wrap">
+                  <ul class="search">
+                    <li>
+                      <label for="date" class="dot">발생시각</label>
+                      <span class="period period_multi">
+                        <input type="text" class="datepicker from" id="date" name="date" placeholder="YYYY-MM-DD"
+                          readonly dataformat="from" title="시작 날짜 선택" value="2021-01-01">
+                        <input type="text" class="datepicker to" name="date" placeholder="YYYY-MM-DD" readonly
+                          dataformat="to" title="종료  날짜 선택" value="2021-01-01">
+                      </span>
+                    </li>
+                    <li>
+                      <label for="searchword" class="dot">검색어</label>
+                      <input type="text" id="searchword" placeholder="화산번호, 화산명, 분화위치">
+                      <a href="#" class="btn_s btn_navy">검색</a>
+                      <a href="#" class="btn_s btn_blue">초기화</a>
+                    </li>
+                  </ul>
                 </div>
-                <div class="tbl_default">
-                  <table class="tbl_col">
-                    <caption>처리결과 제목 테이블</caption>
-                    <colgroup>
-                      <col width="35">
-                      <col width="60">
-                      <col width="140">
-                      <col width="140">
-                      <col width="170">
-                      <col width="*">
-                      <col width="100">
-                      <col width="100">
-                      <col width="100">
-                      <col width="120">
-                      <col width="200">
-                      <col width="70">
-                      <col width="70">
-                      <col class="fix_scroll">
-                    </colgroup>
-                    <tr>
-                      <th><label for=""></label></th>
-                      <th><label for="">순번</label></th>
-                      <th><label for="">시나리오 ID</label></th>
-                      <th><label for="">화산번호</label></th>
-                      <th><label for="">발표시각(KST)</label></th>
-                      <th><label for="">화산이름</label></th>
-                      <th><label for="">위도</label></th>
-                      <th><label for="">경도</label></th>
-                      <th><label for="">고도</label></th>
-                      <th><label for="">분연주높이</label></th>
-                      <th><label for="">주의보번호</label></th>
-                      <th><label for="">수동생성</label></th>
-                      <th><label for="">훈련횟수</label></th>
-                      <th>&nbsp;</th>
-                      </th>
-                    </tr>
-                    </thead>
-                  </table>
-                  <div class="tbl_scroll" style="height:547px">
+                <div class="table_wrap">
+                  <div class="tbl_tit flex_wrap f_sb">
+                    <h3 class="tit_h3">화산</h3>
+                    <div class="btn_wrap">
+                      <a href="#" class="btn_m  btn_mint">목록추가</a>
+                      <a href="#" class="btn_m btn_mint">신규생성</a>
+                      <a href="#" class="btn_m btn_deepgray">삭제</a>
+                    </div>
+                  </div>
+                  <div class="tbl_default">
                     <table class="tbl_col">
-                      <caption>처리결과 내용 테이블</caption>
+                      <caption>처리결과 제목 테이블</caption>
                       <colgroup>
                         <col width="35">
                         <col width="60">
@@ -117,7 +80,99 @@
                         <col width="70">
                         <col width="70">
                       </colgroup>
+                      <tr>
+                        <th><label for=""></label></th>
+                        <th><label for="">순번</label></th>
+                        <th><label for="">시나리오 ID</label></th>
+                        <th><label for="">화산번호</label></th>
+                        <th><label for="">발표시각(KST)</label></th>
+                        <th><label for="">화산이름</label></th>
+                        <th><label for="">위도</label></th>
+                        <th><label for="">경도</label></th>
+                        <th><label for="">고도</label></th>
+                        <th><label for="">분연주높이</label></th>
+                        <th><label for="">주의보번호</label></th>
+                        <th><label for="">수동생성</label></th>
+                        <th><label for="">훈련횟수</label></th>
+                        </th>
+                      </tr>
+                      </thead>
                       <tbody>
+                        <tr>
+                          <td><input type="checkbox"></td>
+                          <td>1</td>
+                          <td>2020014090</td>
+                          <td>261080</td>
+                          <td>2020-10-09 04:38:41</td>
+                          <td>인도네시아 시나붕</td>
+                          <td>3.0</td>
+                          <td>98.39</td>
+                          <td>2460</td>
+                          <td>10000</td>
+                          <td>2020/110</td>
+                          <td>N</td>
+                          <td>5</td>
+                        </tr>
+                        <tr>
+                          <td><input type="checkbox"></td>
+                          <td>1</td>
+                          <td>2020014090</td>
+                          <td>261080</td>
+                          <td>2020-10-09 04:38:41</td>
+                          <td>인도네시아 시나붕</td>
+                          <td>3.0</td>
+                          <td>98.39</td>
+                          <td>2460</td>
+                          <td>10000</td>
+                          <td>2020/110</td>
+                          <td>N</td>
+                          <td>5</td>
+                        </tr>
+                        <tr>
+                          <td><input type="checkbox"></td>
+                          <td>1</td>
+                          <td>2020014090</td>
+                          <td>261080</td>
+                          <td>2020-10-09 04:38:41</td>
+                          <td>인도네시아 시나붕</td>
+                          <td>3.0</td>
+                          <td>98.39</td>
+                          <td>2460</td>
+                          <td>10000</td>
+                          <td>2020/110</td>
+                          <td>N</td>
+                          <td>5</td>
+                        </tr>
+                        <tr>
+                          <td><input type="checkbox"></td>
+                          <td>1</td>
+                          <td>2020014090</td>
+                          <td>261080</td>
+                          <td>2020-10-09 04:38:41</td>
+                          <td>인도네시아 시나붕</td>
+                          <td>3.0</td>
+                          <td>98.39</td>
+                          <td>2460</td>
+                          <td>10000</td>
+                          <td>2020/110</td>
+                          <td>N</td>
+                          <td>5</td>
+                        </tr>
+                        <tr>
+                          <td><input type="checkbox"></td>
+                          <td>1</td>
+                          <td>2020014090</td>
+                          <td>261080</td>
+                          <td>2020-10-09 04:38:41</td>
+                          <td>인도네시아 시나붕</td>
+                          <td>3.0</td>
+                          <td>98.39</td>
+                          <td>2460</td>
+                          <td>10000</td>
+                          <td>2020/110</td>
+                          <td>N</td>
+                          <td>5</td>
+                        </tr>
                         <tr>
                           <td><input type="checkbox"></td>
                           <td>1</td>
@@ -271,82 +326,31 @@
                       </tbody>
                     </table>
                   </div>
+                  <div class="paginate">
+                    <a href="#" class="first" title="처음">〈〈</a>
+                    <a href="#" class="pre" title="이전">〈</a>
+                    <span>
+                      <a href="#" class="on">1</a>
+                      <a href="#">2</a>
+                      <a href="#">3</a>
+                      <a href="#">4</a>
+                    </span>
+                    <a href="#" class="next" title="다음">〉</a>
+                    <a href="#" class="last" title="마지막">〉〉</a>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-          <!-- contents_e -->
         </div>
+        <!-- contents_e -->
       </div>
-      <script>
-        var mydata = [
-          { "t1": "1", "t2": "2020014090", "t3": "261080", "t4": "2020-02-29 21:15:00", "t5": "인도네시아 시나붕", "t6": "3.17", "t7": "98.39", "t8": "2460", "t9": "10000", "t10": "2020/110", "t11": "automatic", "t12": "5" },
-          { "t1": "1", "t2": "2020014090", "t3": "261080", "t4": "2020-02-29 21:15:00", "t5": "인도네시아 시나붕", "t6": "3.17", "t7": "98.39", "t8": "2460", "t9": "10000", "t10": "2020/110", "t11": "automatic", "t12": "5" },
-          { "t1": "1", "t2": "2020014090", "t3": "261080", "t4": "2020-02-29 21:15:00", "t5": "인도네시아 시나붕", "t6": "3.17", "t7": "98.39", "t8": "2460", "t9": "10000", "t10": "2020/110", "t11": "automatic", "t12": "5" },
-          { "t1": "1", "t2": "2020014090", "t3": "261080", "t4": "2020-02-29 21:15:00", "t5": "인도네시아 시나붕", "t6": "3.17", "t7": "98.39", "t8": "2460", "t9": "10000", "t10": "2020/110", "t11": "automatic", "t12": "5" },
-          { "t1": "1", "t2": "2020014090", "t3": "261080", "t4": "2020-02-29 21:15:00", "t5": "인도네시아 시나붕", "t6": "3.17", "t7": "98.39", "t8": "2460", "t9": "10000", "t10": "2020/110", "t11": "automatic", "t12": "5" },
-          { "t1": "1", "t2": "2020014090", "t3": "261080", "t4": "2020-02-29 21:15:00", "t5": "인도네시아 시나붕", "t6": "3.17", "t7": "98.39", "t8": "2460", "t9": "10000", "t10": "2020/110", "t11": "automatic", "t12": "5" },
-          { "t1": "1", "t2": "2020014090", "t3": "261080", "t4": "2020-02-29 21:15:00", "t5": "인도네시아 시나붕", "t6": "3.17", "t7": "98.39", "t8": "2460", "t9": "10000", "t10": "2020/110", "t11": "automatic", "t12": "5" },
-          { "t1": "1", "t2": "2020014090", "t3": "261080", "t4": "2020-02-29 21:15:00", "t5": "인도네시아 시나붕", "t6": "3.17", "t7": "98.39", "t8": "2460", "t9": "10000", "t10": "2020/110", "t11": "automatic", "t12": "5" },
-          { "t1": "1", "t2": "2020014090", "t3": "261080", "t4": "2020-02-29 21:15:00", "t5": "인도네시아 시나붕", "t6": "3.17", "t7": "98.39", "t8": "2460", "t9": "10000", "t10": "2020/110", "t11": "automatic", "t12": "5" }
-        ];
-
-        $("#jqGrid").jqGrid({
-          data: mydata,
-          datatype: "local",
-          colModel: [
-            { label: '순번', name: 't1', width: 40 },
-            { label: '시나리오 ID', name: 't2', width: 65 },
-            { label: '화산번호', name: 't3', width: 65 },
-            { label: '발표시각(KST)', name: 't4', width: 75 },
-            { label: '화산이름', name: 't5', align: 'left', classes: "grid_col" },
-            { label: '위도', name: 't6', width: 50 },
-            { label: '경도', name: 't7', width: 50 },
-            { label: '고도(m)', name: 't8', width: 50 },
-            { label: '분연주높이(feet)', name: 't9', width: 60 },
-            { label: '주의보번호', name: 't10', width: 60, formatter: waveExistence },
-            { label: '수동생성', name: 't11', width: 70, formatter: autoCrate },
-            { label: '훈련횟수', name: 't12', width: 70 }
-          ],
-          multiselect: true,
-          //rownumbers:true,
-          loadonce: true,
-          height: 565,
-          viewrecords: true,
-          autowidth: true,
-          rowTotal: -1
-        });
-
-        function autoCrate(cellValue) {
-          var html, txt = "";
-          switch (cellValue) {
-            case "manual":
-              html = "Y";
-              break;
-            case "automatic":
-              html = "N";
-              break;
-            default:
-              html = "";
-          }
-          return html;
-        }
-        function waveExistence(cellValue) {
-          var html, txt = "";
-          switch (cellValue) {
-            case "y":
-              html = "○";
-              break;
-            default:
-              html = "";
-          }
-          return html;
-        }
-      </script>
     </div>
-    <!-- // Contents -->
+  </div>
+  <!-- // Contents -->
   </div>
   @@include('inc/p_scenario07.html')
+  @@include('inc/p_scenario09.html')
 </body>
 
 </html>
