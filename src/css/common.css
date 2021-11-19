@@ -105,7 +105,8 @@ td, th{font-size:14px;}
 .tbl_default td{padding:4px 7px;border-color:#ecf0f7;}
 .tbl_default th:first-child,
 .tbl_default td:first-child{border-left-width:0;}
-.tbl_default tr.on{background-color:#fffcc6;border-color:#fad42e;}
+.tbl_default tr.on,
+.tbl_default tr.on:hover{background-color:#fffcc6;border-color:#fad42e;}
 .tbl_default tr:hover{background-color:#f0f7ff;}
 .table_wrap h4{margin-bottom:5px;font-size:14px;font-weight:bold;color:#2a3652;}
 

@@ -13,7 +13,7 @@ $(function () {
   $("[dataformat='datepic']").datepicker({
     buttonText: "날짜를 선택해주세요."
   });
-  $(".nobtnimg").next('img').attr('style','display:none;');
+  $(".nobtnimg").next('img').attr('style', 'display:none;');
   var from = $("[dataformat='from']").datepicker({
     buttonText: "시작날짜를 선택해주세요.",
     onClose: function (selectedDate) {
@@ -28,7 +28,7 @@ $(function () {
       $("input[name='" + getName + "'].from").datepicker("option", "maxDate", selectedDate);
     }
   });
-  
+
   // pop
   var popBtn = $('[openpop]');
   popBtn.on('click', function () {
@@ -39,6 +39,4 @@ $(function () {
   closePop.on('click', function () {
     $(this).parents('.pop_overlay').hide();
   })
-
-
 })

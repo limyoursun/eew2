@@ -4,16 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>국가지진종합상황실 훈련시스템</title>
+  <script src="../plugins/jquery/dist/jquery.min.js"></script>
+  <script src="../plugins/jquery-ui/jquery-ui.min.js"></script>
+  <script src="../plugins/jquery-ui/ui/i18n/datepicker-ko.js"></script>
   <link rel="icon" href="../images/favicon.ico" type="image/x-icon" />
-  <link rel="stylesheet" href="../plugins/axicon/axicon.min.css" />
   <link rel="stylesheet" href="../plugins/jquery-ui/themes/base/jquery-ui.min.css" />
+  <link rel="stylesheet" href="../plugins/axicon/axicon.min.css" />
   <link rel="stylesheet" href="../plugins/jqueryui-timepicker-addon/dist/jquery-ui-timepicker-addon.min.css" />
   <link rel="stylesheet" href="../plugins/jqGrid/css/ui.jqgrid.css" />
   <link rel="stylesheet" href="../css/common.css">
   <link rel="stylesheet" href="../css/style.css">
-  <script src="../plugins/jquery/dist/jquery.min.js"></script>
-  <script src="../plugins/jquery-ui/jquery-ui.min.js"></script>
-  <script src="../plugins/jquery-ui/ui/i18n/datepicker-ko.js"></script>
   <script src="../plugins/jqGrid/js/jquery.jqGrid.min.js"></script>
   <script src="../plugins/jqGrid/js/i18n/grid.locale-kr.js"></script>
   <script src="../plugins/echarts/dist/echarts.min.js"></script>
@@ -636,7 +636,7 @@
               </ul>
             </div>
             <div class="tbl_default">
-              <table class="tbl_col">
+              <table class="tbl_col tbl_scenario four">
                 <caption>화산 전문감시 목록 제목 테이블</caption>
                 <colgroup>
                   <col width="40">
@@ -660,7 +660,7 @@
                     <td><input type="checkbox" checked></td>
                     <td>2020-10-09 04:38:41</td>
                     <td>268010</td>
-                    <td>Dukono(두코노)</td>
+                    <td>?</td>
                     <td>6000</td>
                     <td>2020/157</td>
                   </tr>
@@ -676,7 +676,7 @@
                     <td><input type="checkbox"></td>
                     <td>2020-10-09 04:38:41</td>
                     <td>268010</td>
-                    <td>Dukono(두코노)</td>
+                    <td>이것은 아주 정말저엉말 너무나도 너무나도 긴 화산의 이름</td>
                     <td>6000</td>
                     <td>2020/157</td>
                   </tr>
@@ -792,7 +792,7 @@
               <h3 class="tit_h3">시나리오 화산 목록</h3>
             </div>
             <div class="tbl_default">
-              <table class="tbl_col">
+              <table class="tbl_col tbl_scenario three">
                 <caption>화산 전문감시 목록 제목 테이블</caption>
                 <colgroup>
                   <col width="150">
@@ -813,7 +813,7 @@
                   <tr>
                     <td>2020-10-09 04:38:41</td>
                     <td>268010</td>
-                    <td>Dukono(두코노)</td>
+                    <td>Dukono(두코노)Dukono(두코노)Dukono(두코노)Dukono(두코노)Dukono(두코노)Dukono(두코노)Dukono(두코노)Dukono(두코노)</td>
                     <td>6000</td>
                     <td>2020/157</td>
                   </tr>
@@ -955,7 +955,21 @@
     </div>
   </div>
 </div>
-</div>
+
+<script>
+  $('td').each(function () {
+    if (this.offsetWidth = this.scrollWidth) {
+      $(this).html(`<span>` + $(this).text() + `</span>`);
+    }
+  });
+  $('td>span').each(function () {
+    if (this.offsetWidth < this.scrollWidth) {
+      $(this).parent('td').addClass('tooltip');
+      $(this).attr('title-text', $(this).text());
+    }
+  });
+
+</script>
 </body>
 
 </html>
