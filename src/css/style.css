@@ -5,7 +5,7 @@
 .pop_wrap .btn_wrap{margin:20px 0;text-align:center;}
 .pop_wrap .btn_wrap button{font-weight:bold;}
 .pop_wrap{width:745px;position:fixed;top:50%;left:50%;background-color:#fff;transform:translateX(-50%) translateY(-50%);border:1px solid #192438;}
-.pop_body{max-height:695px;margin:1px;padding:18px 18px 0;overflow-y:auto;}
+.pop_body{max-height:695px;margin:1px;padding:18px 18px 0;}
 .pop_tit{display:flex;justify-content:space-between;padding:10px 15px;background-color:#334162;}
 .pop_tit h1{font-size:16px;font-weight:bold;color:#fff;}
 .btn_pop_close{position:relative;top:1px;width:17px;height:17px;background:transparent;}
@@ -175,10 +175,10 @@ table textarea{width:100%;resize:none;height:100px;}
 
 /* tooltip */
 .tbl_scenario td{position:relative;}
-.tbl_scenario td span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.tbl_scenario td span{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
 .tbl_scenario.four tbody>tr>td:nth-child(4) span{display:block;width:300px;}
 .tbl_scenario.three tbody>tr>td:nth-child(3) span{display:block;width:320px;}
-.tbl_scenario.last tbody>tr>td:last-child span{display:block;width:210px;}
+.tbl_scenario.last tbody>tr>td:last-child span{display:block;width:210px;margin:0 auto;}
 
 td.tooltip span::before{content:'';width:10px;height:10px;border-top:1px solid #c0c0c0;border-right:1px solid #c0c0c0;display:inline-block;transform:rotate(315deg);position:absolute;z-index:10;top:59%;left:48%;opacity:0;transition:.5s;background-color:#fff;}
 

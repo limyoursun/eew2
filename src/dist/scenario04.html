@@ -920,10 +920,11 @@
 </div>
 
 
+
 <script>
   $('td').each(function () {
-    if (this.offsetWidth = this.scrollWidth) {
-      $(this).html(`<span>` + $(this).text() + `</span>`);
+    if (this.offsetWidth = this.scrollWidth && !this.nodeType == 1) {
+      $(this).html('<span>' + $(this).text() + '</span>');
     }
   });
   $('td>span').each(function () {
@@ -932,7 +933,6 @@
       $(this).attr('title-text', $(this).text());
     }
   });
-
 </script>
 </body>
 

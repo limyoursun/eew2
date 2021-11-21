@@ -426,13 +426,8 @@
 </div>
 
 <script>
-  $('td').on('click', function () {
-    console.dir(this);
-    console.log(offsetWidth, scrollWidth);
-  })
-
   $('td').each(function () {
-    if (this.offsetWidth = this.scrollWidth && !this.childElementCount == 1) {
+    if (this.offsetWidth = this.scrollWidth && !this.nodeType == 1) {
       $(this).html('<span>' + $(this).text() + '</span>');
     }
   });
