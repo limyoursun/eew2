@@ -175,7 +175,7 @@ table textarea{width:100%;resize:none;height:100px;}
 
 /* tooltip */
 .tbl_scenario td{position:relative;}
-.tbl_scenario td span{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.tbl_scenario td span{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;margin:0 auto;}
 .tbl_scenario.four tbody>tr>td:nth-child(4) span{display:block;width:300px;}
 .tbl_scenario.three tbody>tr>td:nth-child(3) span{display:block;width:320px;}
 .tbl_scenario.last tbody>tr>td:last-child span{display:block;width:210px;margin:0 auto;}

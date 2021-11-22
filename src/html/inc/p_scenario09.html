@@ -351,23 +351,23 @@
   </div>
 </div>
 
-
 <script>
+$('td').on('click', function () {
+    console.dir(this);
+    console.log(offsetWidth, scrollWidth);
+  })
 
-  $('td').on('click', function () {
-      console.dir(this);
-      console.log(offsetWidth, scrollWidth);
-    })
-  
-    $('td').each(function () {
-      if (this.offsetWidth = this.scrollWidth && !this.childElementCount == 1) {
-        $(this).html('<span>' + $(this).text() + '</span>');
-      }
-    });
-    $('td>span').each(function () {
-      if (this.offsetWidth < this.scrollWidth) {
-        $(this).parent('td').addClass('tooltip');
-        $(this).attr('title-text', $(this).text());
-      }
-    });
-  </script>
+  $('td').each(function () {
+    if (this.offsetWidth = this.scrollWidth && !this.childElementCount == 1) {
+      $(this).html('<span>' + $(this).text() + '</span>');
+    }
+  });
+  $('td>span').each(function () {
+    if (this.offsetWidth < this.scrollWidth) {
+      var pWidth = $(this).parent('td').width();
+      $(this).width(pWidth);
+      $(this).parent('td').addClass('tooltip');
+      $(this).attr('title-text', $(this).text());
+    }
+  });
+</script>

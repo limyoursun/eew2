@@ -225,12 +225,12 @@
               <table class="tbl_col tbl_scenario last">
                 <caption>시나리오 지진 목록 제목 테이블</caption>
                 <colgroup>
-                  <col width="80">
-                  <col width="120">
+                  <col width="100">
                   <col width="150">
-                  <col width="60">
-                  <col width="60">
-                  <col width="70">
+                  <col width="150">
+                  <col width="100">
+                  <col width="100">
+                  <col width="150">
                   <col width="*">
                 </colgroup>
                 <tr>
@@ -426,7 +426,6 @@
 </div>
 
 <script>
-
 $('td').on('click', function () {
     console.dir(this);
     console.log(offsetWidth, scrollWidth);
@@ -439,6 +438,8 @@ $('td').on('click', function () {
   });
   $('td>span').each(function () {
     if (this.offsetWidth < this.scrollWidth) {
+      var pWidth = $(this).parent('td').width();
+      $(this).width(pWidth);
       $(this).parent('td').addClass('tooltip');
       $(this).attr('title-text', $(this).text());
     }
